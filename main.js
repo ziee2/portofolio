@@ -2,8 +2,8 @@ let notLoadAll = document.querySelectorAll(".notload")
 
 
 var typed= new Typed(".text",{
-    strings:["Programmer"],
-    // strings:["AI Specialist", "Machine Learning Developer", "AI Engineer"],
+    // strings:["Programmer"],
+    strings:["AI Specialist", "ML Developer", "AI Engineer"],
     typeSpeed:100,
     backSpeed:100,
     backDelay:1000,
@@ -29,4 +29,10 @@ window.onload = () => {
 			}, 1000);
 		}, 100);
 	}, 1000);
+}
+
+
+function toggleMenu() {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('active');
 }
