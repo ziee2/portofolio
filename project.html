@@ -18,50 +18,60 @@
   </head>
   <body>
     <header class="header">
-      <!-- <button class="navbar-toggler" onclick="toggleMenu()">☰</button> -->
-      <a href="./index.html" class="logo"><span class="text-info">My </span>Portofolio</a>
-      <nav class="navbar">
-        <a href="./index.html" style="--i: 1" class="active">Home</a>
-        <a href="./index.html" style="--i: 2">About</a>
-        <a href="./index.html" style="--i: 3">Skill</a>
-        <a href="#" style="--i: 4">Project</a>
-        <a href="./index.html" style="--i: 5">Certificates</a>
+      <a href="./index.html" class="logo"><span>My </span>Portofolio</a>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="navbar" id="navbar">
+        <a href="./index.html" style="--i: 1">Home</a>
+        <a href="./index.html#about" style="--i: 2">About</a>
+        <a href="./index.html#skills" style="--i: 3">Skill</a>
+        <a href="#" style="--i: 4" class="active">Project</a>
+        <a href="./index.html#sertifikat" style="--i: 5">Certificates</a>
       </nav>
     </header>
 
     <section class="projects" id="projects">
-      <h1 class="sub-title text-light">My <span>Projects</span></h1>
-      <div class="main3 text-light">
-        <p>other projects are not here because they have been disabled, you can see the project source code on <a href="https://github.com/ziee2" target="_blank">my github</a></p>
-        <div class="container">
-          <div class="projects">
+      <h1 class="sub-title">My <span>Projects</span></h1>
+      <div class="main3">
+        <p>Other projects are not here because they have been disabled, you can see the project source code on <a href="https://github.com/ziee2" target="_blank">my GitHub</a></p>
+        <div class="projects">
             <div class="project">
               <img draggable="false" src="./assets/project/Dashboard Owner.jpg" alt="project1" class="img-fluid" />
-              <p class="mt-5">
-                This project name is <strong>ChiCheck</strong>. website-based chicken droppings data collection and scanning system designed to help laying hen breeders identify the health of chickens. The main feature of
-                <strong>ChiCheck</strong> is its ability to perform scans to detect disease in chickens. Apart from that, <strong>ChiCheck</strong> is also equipped with a data collection feature for eggs, chickens and feed.
-              </p>
-              <div class="buttons">
-                <button class="btn" onclick="window.open('https://github.com/ziee2/ChiCheck-WEB.git', '_blank')">Source</button>
+              <div class="project-content">
+                <p>
+                  This project name is <strong>ChiCheck</strong>. website-based chicken droppings data collection and scanning system designed to help laying hen breeders identify the health of chickens. The main feature of
+                  <strong>ChiCheck</strong> is its ability to perform scans to detect disease in chickens. Apart from that, <strong>ChiCheck</strong> is also equipped with a data collection feature for eggs, chickens and feed.
+                </p>
+                <div class="buttons">
+                  <button class="btn" onclick="window.open('https://github.com/ziee2/ChiCheck-WEB.git', '_blank')">Source</button>
+                </div>
               </div>
             </div>
             <div class="project">
               <img draggable="false" src="./assets/project/file_2024-06-01_04.49.33.png" alt="project2" />
-              <p class="mt-5">This project name is <strong>FlyPaper</strong>Game with the endless runner genre</p>
-              <div class="buttons">
-                <button class="btn" onclick="window.open('https://github.com/Bee3-Team/Bee3', '_blank')">Source</button>
+              <div class="project-content">
+                <p>This project name is <strong>FlyPaper</strong> - A game with the endless runner genre.</p>
+                <div class="buttons">
+                  <button class="btn" onclick="window.open('https://github.com/Bee3-Team/Bee3', '_blank')">Source</button>
+                </div>
               </div>
             </div>
             <div class="project">
               <img draggable="false" src="./assets/project/file_2024-06-01_04.50.40.png" alt="project3" />
-              <p class="mt-5">This project name is <strong>I-Care</strong> make with expressjs and socket.io, this project name is <strong>Zhatting</strong>. you can make your own Bot there with our npm package</p>
-              <div class="buttons">
-                <button class="btn" onclick="window.open('https://github.com/Vins2106/zhat.cf', '_blank')">Source</button>
+              <div class="project-content">
+                <p>This project name is <strong>I-Care</strong> - Made with Express.js and Socket.io. You can make your own Bot there with our npm package.</p>
+                <div class="buttons">
+                  <button class="btn" onclick="window.open('https://github.com/Vins2106/zhat.cf', '_blank')">Source</button>
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </section>
+
+    <script src="./main.js"></script>
   </body>
 </html>

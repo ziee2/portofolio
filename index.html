@@ -18,22 +18,26 @@
   </head>
   <body>
     <header class="header">
-      <a href="#" class="logo"><span class="text-info">My </span>Portofolio</a>
-      <nav class="navbar">
+      <a href="#" class="logo"><span>My </span>Portofolio</a>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="navbar" id="navbar">
         <a href="#home" style="--i: 1" class="active">Home</a>
         <a href="#about" style="--i: 2">About</a>
         <a href="#services" style="--i: 3">Experience</a>
-        <a href="#services" style="--i: 3">SKill</a>
-        <a href="./project.html" style="--i: 4">Project</a>
-        <a href="#sertifikat" style="--i: 5">Certificates</a>
+        <a href="#skills" style="--i: 4">Skill</a>
+        <a href="./project.html" style="--i: 5">Project</a>
+        <a href="#sertifikat" style="--i: 6">Certificates</a>
       </nav>
     </header>
 
     <section class="home" id="home">
-      <div class="container text-light">
+      <div class="container">
         <div class="row">
-          <div class="col-8">
-            <div class="home-content">
+          <div class="home-content">
               <h3>Hello, Its's Me</h3>
               <h1>Moh. Faried Al Farizi</h1>
               <h3>And I'm a <span class="text"></span></h3>
@@ -50,15 +54,11 @@
                 <a href="https://github.com/ziee2" style="--i: 11"><i class="bx bxl-github"></i></a>
               </div>
               <a href="#about" class="btn-box">About Me</a>
-            </div>
           </div>
-          <div class="col-5 col-md-4">
-            <div class="jumbotron-box">
-              <!-- <div class="container"> -->
-              <div class="jumbotron">
-                <div class="jumbotron-item notload">
-                  <img src="./assets/pict-removebg-preview.png" alt="logo" draggable="false" />
-                </div>
+          <div class="jumbotron-box">
+            <div class="jumbotron">
+              <div class="jumbotron-item notload">
+                <img src="./assets/pict-removebg-preview.png" alt="logo" draggable="false" />
               </div>
             </div>
           </div>
@@ -70,15 +70,14 @@
       <div class="about-img">
         <div class="jumbotron-box">
           <div class="jumbotron">
-            <div class="jumbotron-item notload">
+            <div class="jumbotron-item">
               <img src="./assets/IMG_20221107_113749.png" alt="logo" draggable="false" />
             </div>
           </div>
         </div>
-        <!-- <img src="./assets/pict.jpg" alt=""> -->
       </div>
       <div class="about-text">
-        <h2 class="text-light">About <span>me</span></h2>
+        <h2>About <span>Me</span></h2>
         <!-- <h4>Programmer</h4>se -->
         <p>
           Active student of the Informatics Study Program at Jember University with a focus on Machine Learning, Artificial Intelligence, and Deep Learning. Has a deep understanding in machine learning techniques, data processing, and
@@ -90,14 +89,11 @@
       </div>
     </section>
 
-    <section>
-      <div class="services" id="services">
-        <!-- <div></div> -->
-        <div class="container">
-          <h1 class="sub-title text-light">My <span>Experience</span></h1>
+    <section class="services" id="services">
+      <div class="container">
+        <h1 class="sub-title">My <span>Experience</span></h1>
           <div class="services-list">
-            <div class="text-light">
-              <!-- <i class='bx bx-code' style="color: aqua;"></i> -->
+            <div>
               <p>6 September - 31 Desember</p>
               <h2>Student Machine Learning</h2>
               <h3>
@@ -112,14 +108,12 @@
               <a href="https://www.linkedin.com/in/moh-faried-al-farizi123/" class="read">See More</a>
             </div>
           </div>
-        </div>
       </div>
     </section>
 
-    <section id="skills" class="skill">
-      <div class="skills">
-        <div class="main2 text-light">
-          <h1 class="sub-title text-light">My <span>Skills</span></h1>
+    <section id="skills" class="skills">
+      <div class="main2">
+        <h1 class="sub-title">My <span>Skills</span></h1>
           <div class="container1">
             <div class="skill" onclick="window.open('https://jquery.com/', '_blank')"><i class="fab fa-python"></i> Python</div>
             <div class="skill" onclick="window.open('https://jquery.com/', '_blank')"><i class="bx bxl-postgresql"></i> SQL</div>
@@ -132,7 +126,7 @@
             <div class="skill" onclick="window.open('https://getbootstrap.com/', '_blank')"><i class="fab fa-bootstrap"></i> Bootstrap</div>
             <div class="skill" onclick="window.open('https://getbootstrap.com/', '_blank')"><i class="fab fa-laravel"></i> Laravel</div>
 
-            <div class="skill" onclick="window.open('https://getbootstrap.com/', '_blank')"><i class="fab fa-"></i> Flask</div>
+            <div class="skill" onclick="window.open('https://flask.palletsprojects.com/', '_blank');"><i class="fab fa-python"></i> Flask</div>
           </div>
           <h1 class="skills-t" id="tools">Tools</h1>
           <div class="container1">
@@ -144,13 +138,12 @@
 
             <div class="skill" onclick="window.open('https://github.com/', '_blank')">Github</div>
           </div>
-        </div>
       </div>
     </section>
 
     <section class="sertifikat" id="sertifikat">
-      <h1 class="sub-title text-light">My <span>Certificates</span></h1>
-      <div class="main4 text-light">
+      <h1 class="sub-title">My <span>Certificates</span></h1>
+      <div class="main4">
         <p>not all certificates are listed here to see more complete certificates check to <a href="https://www.linkedin.com/in/moh-faried-al-farizi123/details/certifications/">My linkedin</a></p>
       </div>
 
