@@ -30,7 +30,7 @@ const heroNotes = [
 const projectTracks = ['Semua', 'AI Engineer', 'Data', 'Software Development', 'Game Development'] as const;
 
 const socialLinks = [
-  { label: 'Instagram', href: 'https://www.instagram.com/z1ee.e/' },
+  { label: 'fariedfarizi24@gmail.com', href: 'mailto:fariedfarizi24@gmail.com' },
   { label: 'WhatsApp', href: 'https://wa.me/+6285236487807' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/moh-faried-al-farizi-0237b128b/' },
   { label: 'GitHub', href: 'https://github.com/ziee2' },
@@ -246,7 +246,7 @@ export default function Home() {
                   <div className="mt-8 flex flex-wrap gap-3">
                     {socialLinks.map((link) => (
                       <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-white/70 bg-white/80 px-4 py-2 text-sm text-muted shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-200 hover:text-ink">
-                        {link.label === 'Instagram' && <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>}
+                        {link.label === 'fariedfarizi24@gmail.com' && <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>}
                         {link.label === 'WhatsApp' && <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>}
                         {link.label === 'LinkedIn' && <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>}
                         {link.label === 'GitHub' && <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>}
@@ -485,7 +485,7 @@ export default function Home() {
                           </div>
                         </div>
                       </motion.article>
-                      <div className="grid gap-3">
+                      <div className="grid gap-3 content-start">
                         {sideProjects.map((project) => (
                           <motion.article key={project.title} whileHover={{ y: -3 }} className="group overflow-hidden rounded-[1.2rem] border border-slate-200 bg-white shadow-sm transition">
                             <div className="relative overflow-hidden">
@@ -496,13 +496,20 @@ export default function Home() {
                               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">{project.category}</p>
                               <h4 className="mt-1.5 text-sm font-semibold text-ink">{project.title}</h4>
                               <p className="mt-1.5 text-[11px] leading-5 text-muted">{project.outcome}</p>
-                              <div className="mt-2 flex items-center gap-2">
-                                <button type="button" onClick={() => { setSelectedProject(project); setCurrentImageIndex(0); }} className="text-[10px] font-semibold text-ink transition hover:text-accent">
+                              <div className="mt-3 flex flex-wrap items-center gap-2">
+                                <button type="button" onClick={() => { setSelectedProject(project); setCurrentImageIndex(0); }} className="rounded-full bg-ink px-3 py-1.5 text-[10px] font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800">
                                   {t.sections.projects.detail}
                                 </button>
-                                <a href={project.repoUrl} target="_blank" rel="noreferrer" className="text-[10px] font-semibold text-ink/80 transition hover:text-accent">
-                                  {project.repoLabel || 'GitHub'}
-                                </a>
+                                {project.repoUrl && project.repoUrl !== '' && (
+                                  <a href={project.repoUrl} target="_blank" rel="noreferrer" className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-semibold text-slate-600 transition hover:-translate-y-0.5 hover:bg-slate-50 hover:text-ink">
+                                    {project.repoLabel || 'GitHub'}
+                                  </a>
+                                )}
+                                {project.demoUrl ? (
+                                  <a href={project.demoUrl} target="_blank" rel="noreferrer" className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-semibold text-slate-600 transition hover:-translate-y-0.5 hover:bg-slate-50 hover:text-ink">
+                                    {project.demoLabel || 'Demo'}
+                                  </a>
+                                ) : null}
                               </div>
                             </div>
                           </motion.article>
@@ -539,13 +546,20 @@ export default function Home() {
                               <span className="shrink-0 rounded-full bg-ink/5 px-2 py-0.5 text-[10px] font-semibold text-muted">{project.category}</span>
                             </div>
                             <p className="mt-1 text-[10px] leading-5 text-muted md:text-[11px] md:leading-5 line-clamp-3">{project.summary}</p>
-                            <div className="mt-auto pt-3 flex items-center gap-2">
-                              <button type="button" onClick={() => setSelectedProject(project)} className="text-[10px] font-semibold text-ink transition hover:text-accent">
+                            <div className="mt-auto pt-3 flex flex-wrap items-center gap-2">
+                              <button type="button" onClick={() => { setSelectedProject(project); setCurrentImageIndex(0); }} className="rounded-full bg-ink px-3 py-1.5 text-[10px] font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800">
                                 {t.sections.projects.seeDetail}
                               </button>
-                              <a href={project.repoUrl} target="_blank" rel="noreferrer" className="text-[10px] font-semibold text-ink/80 transition hover:text-accent">
-                                {project.repoLabel || 'GitHub'}
-                              </a>
+                              {project.repoUrl && project.repoUrl !== '' && (
+                                <a href={project.repoUrl} target="_blank" rel="noreferrer" className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-semibold text-slate-600 transition hover:-translate-y-0.5 hover:bg-slate-50 hover:text-ink">
+                                  {project.repoLabel || 'GitHub'}
+                                </a>
+                              )}
+                              {project.demoUrl ? (
+                                <a href={project.demoUrl} target="_blank" rel="noreferrer" className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-semibold text-slate-600 transition hover:-translate-y-0.5 hover:bg-slate-50 hover:text-ink">
+                                  {project.demoLabel || 'Demo'}
+                                </a>
+                              ) : null}
                             </div>
                           </div>
                         </motion.article>
@@ -630,6 +644,12 @@ export default function Home() {
                 <p className="mt-2 max-w-3xl text-[11px] leading-5 text-white/80 md:text-sm md:leading-6">
                   {t.sections.closing.desc}
                 </p>
+                <div className="mt-5 flex gap-3">
+                  <a href="mailto:fariedfarizi24@gmail.com" className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-cyan-300">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    {language === 'en' ? 'Email Me' : 'Kirim Email'}
+                  </a>
+                </div>
               </motion.div>
             </section>
           </motion.div>

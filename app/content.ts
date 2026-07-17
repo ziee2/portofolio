@@ -24,6 +24,7 @@ import segdaunImage from '../assets/project/segdaun.png';
 import segmentasiresultImage from '../assets/project/segmentasiresult.png';
 import aichatbotkskImage from '../assets/project/aichatbotksk.png';
 import chatbotkskImage from '../assets/project/chatbotksk.png';
+import dataAnotasiDaunImage from '../assets/project/data_anotasi_daun.png';
 
 export type ProjectTrack = 'Semua' | 'All' | 'AI Engineer' | 'Data' | 'Software Development' | 'Game Development';
 
@@ -130,7 +131,7 @@ export const dict = {
       },
       experience: {
         title: 'Pengalaman',
-        copy: 'Berikut merupakan timeline karier saya, dari awal kuliah hingga sekarang.',
+        copy: 'Rekam jejak perjalanan karier profesional saya, dari pengalaman akademis hingga berkontribusi langsung pada proyek industri nyata.',
         items: [
           {
             period: 'Februari - April 2026',
@@ -203,7 +204,7 @@ export const dict = {
       },
       projects: {
         title: 'Proyek Unggulan',
-        copy: 'Sekarang proyek saya buat lebih premium: filter kategori, split showcase, dan area masonry untuk eksplorasi proyek lanjutan.',
+        copy: 'Kumpulan portofolio proyek AI, Computer Vision, dan Web Development yang telah saya kembangkan dari tahap perancangan hingga siap digunakan.',
         tracks: ['Semua', 'AI Engineer', 'Data', 'Software Development', 'Game Development'] as ProjectTrack[],
         showingParams: (count: number, track: string) => `Menampilkan ${count} proyek di kategori ${track === 'Semua' ? 'semua area' : track}.`,
         showMore: 'Lihat selengkapnya',
@@ -274,17 +275,18 @@ export const dict = {
             highlights: ['Model klasifikasi berbasis EfficientNetB3', 'API inference untuk integrasi aplikasi', 'Akurasi hingga 98% pada evaluasi internal'],
           },
           {
-            title: 'ChiCheck',
-            summary: 'Sistem pemindaian kesehatan ayam dan pengumpulan data berbasis web untuk peternak.',
-            image: projectDashboardImage,
-            category: 'Data Platform',
+            title: 'Anotasi Instance Segmentation Daun Apel',
+            summary: 'Anotasi dataset instance segmentation penyakit rust pada daun apel dengan total 142 gambar (101 training, 41 evaluasi) yang mencakup kelas daun, rust, buah apel, dan background.',
+            image: [dataAnotasiDaunImage, segdaunImage, segmentasiresultImage],
+            category: 'Data Annotation',
             period: '2024',
-            tracks: ['Data', 'Software Development'] as ProjectTrack[],
+            tracks: ['Data'] as ProjectTrack[],
             featured: false,
-            outcome: 'Berfokus pada pengumpulan, inspeksi, dan penanganan data untuk alur kerja peternakan.',
-            stack: ['PHP', 'MySQL', 'Dashboard'],
-            repoUrl: 'https://github.com/ziee2/ChiCheck-WEB.git',
-            highlights: ['Pengelolaan data telur, pakan, dan ayam', 'Fitur scan kesehatan ayam', 'Dashboard operasional peternakan'],
+            outcome: 'Terdapat total 39 anotasi buah apel, 445 anotasi daun, dan 869 anotasi rust.',
+            stack: ['Data Labeling', 'Roboflow', 'CVAT', 'Instance Segmentation'],
+            repoUrl: 'https://app.roboflow.com/segmentasi-penyakit-daun-apel/segmentasi-penyakit-daun-apel-kl49q/browse?queryText=&pageSize=50&startingIndex=0&browseQuery=true',
+            repoLabel: 'Roboflow Dataset',
+            highlights: ['Membuat anotasi poligon untuk segmentasi penyakit karat daun (rust)', 'Dataset dibagi menjadi 101 gambar training dan 41 gambar evaluasi', 'Menghasilkan 869 instance rust, 445 daun, dan 39 apel', 'Memasukkan background sebagai kelas tambahan untuk meningkatkan ketahanan model'],
           },
           {
             title: 'FlyPaper',
@@ -378,7 +380,7 @@ export const dict = {
       },
       skills: {
         title: 'Keahlian',
-        copy: 'Bagian keahlian disusun menjadi tiga pilar agar recruiter langsung melihat kekuatan teknis utama, bukan sekadar daftar tools.',
+        copy: 'Keterampilan teknis dan perangkat utama yang saya kuasai untuk mengolah data, melatih model AI, hingga mendeploy aplikasi.',
         groups: [
           { title: 'AI / ML', items: ['Python', 'TensorFlow', 'PyTorch', 'Keras', 'Hugging Face', 'Flask', 'FastAPI'] },
           { title: 'Data', items: ['SQL', 'MySQL', 'PostgreSQL', 'ETL', 'Apache NiFi', 'Airflow', 'Web Scraping'] },
@@ -387,7 +389,7 @@ export const dict = {
       },
       certificates: {
         title: 'Sertifikat',
-        copy: 'Koleksi sertifikat tetap ditampilkan sebagai bukti pendukung kompetensi dan konsistensi pembelajaran di jalur AI/Data.',
+        copy: 'Bukti nyata dari komitmen saya untuk terus belajar dan memvalidasi keahlian di bidang kecerdasan buatan serta pengembangan perangkat lunak.',
       },
       closing: {
         note: 'Closing Note',
@@ -445,7 +447,7 @@ export const dict = {
       },
       experience: {
         title: 'Experience',
-        copy: 'I use a professional timeline format: each work phase has visuals, context, tools, and clear impact so your progression is stronger in the eyes of HR.',
+        copy: 'A track record of my professional journey, from academic roles to making direct contributions to real-world industry projects.',
         items: [
           {
             period: 'February - April 2026',
@@ -519,7 +521,7 @@ export const dict = {
       },
       projects: {
         title: 'Featured Projects',
-        copy: 'Projects are now presented more premium: category filters, showcase splits, and a masonry area for further project exploration.',
+        copy: 'A curated showcase of AI, Computer Vision, and Web Development projects I have built from early research to production-ready solutions.',
         tracks: ['All', 'AI Engineer', 'Data', 'Software Development', 'Game Development'] as ProjectTrack[],
         showingParams: (count: number, track: string) => `Showing ${count} projects in ${track === 'All' ? 'all areas' : track}.`,
         showMore: 'View more',
@@ -590,17 +592,18 @@ export const dict = {
             highlights: ['EfficientNetB3-based classification model', 'Inference API for app integration', 'Up to 98% accuracy on internal evaluation'],
           },
           {
-            title: 'ChiCheck',
-            summary: 'Website-based chicken health scanning and data collection system for breeders.',
-            image: projectDashboardImage,
-            category: 'Data Platform',
+            title: 'Apple Leaf Rust Instance Segmentation Annotation',
+            summary: 'Instance segmentation dataset annotation for apple leaf rust disease totaling 142 images (101 training, 41 evaluation) covering leaf, rust, apple, and background classes.',
+            image: [dataAnotasiDaunImage, segdaunImage, segmentasiresultImage],
+            category: 'Data Annotation',
             period: '2024',
-            tracks: ['Data', 'Software Development'] as ProjectTrack[],
+            tracks: ['Data'] as ProjectTrack[],
             featured: false,
-            outcome: 'Focused on collection, inspection, and data handling for breeding workflows.',
-            stack: ['PHP', 'MySQL', 'Dashboard'],
-            repoUrl: 'https://github.com/ziee2/ChiCheck-WEB.git',
-            highlights: ['Management of egg, feed, and chicken data', 'Chicken health scanning feature', 'Farm operational dashboard'],
+            outcome: 'Generated a total of 39 apple, 445 leaf, and 869 rust instance annotations.',
+            stack: ['Data Labeling', 'Roboflow', 'CVAT', 'Instance Segmentation'],
+            repoUrl: 'https://app.roboflow.com/segmentasi-penyakit-daun-apel/segmentasi-penyakit-daun-apel-kl49q/browse?queryText=&pageSize=50&startingIndex=0&browseQuery=true',
+            repoLabel: 'Roboflow Dataset',
+            highlights: ['Created polygon annotations for apple leaf rust segmentation', 'Split the dataset into 101 training and 41 evaluation images', 'Labeled 869 rust instances, 445 leaves, and 39 apples', 'Included background as an explicit class to improve model robustness'],
           },
           {
             title: 'FlyPaper',
@@ -694,7 +697,7 @@ export const dict = {
       },
       skills: {
         title: 'Skills',
-        copy: 'The skills section is structured into three pillars so recruiters can immediately see core technical strengths, rather than just a list of tools.',
+        copy: 'The core technical skills and toolsets I leverage to process data, train AI models, and deploy applications.',
         groups: [
           { title: 'AI / ML', items: ['Python', 'TensorFlow', 'PyTorch', 'Keras', 'Hugging Face', 'Flask', 'FastAPI', 'LLM', 'RAG'] },
           { title: 'Data', items: ['MySQL', 'PostgreSQL', 'ETL', 'Apache NiFi', 'Web Scraping', 'Kaggle', 'Roboflow'] },
@@ -703,7 +706,7 @@ export const dict = {
       },
       certificates: {
         title: 'Certificates',
-        copy: 'A collection of certificates is displayed as supporting evidence of competence and consistent learning in the AI/Data track.',
+        copy: 'Tangible proof of my commitment to continuous learning and validating my expertise in artificial intelligence and software engineering.',
       },
       closing: {
         note: 'Closing Note',
