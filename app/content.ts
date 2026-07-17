@@ -10,6 +10,20 @@ import cert05 from '../assets/sertifikat/Coursera NIBUU6LLFMPP_page-0001.jpg';
 import cert06 from '../assets/sertifikat/Coursera Y5GPPKOQ0Z1V_page-0001.jpg';
 import cert07 from '../assets/sertifikat/sertifikat_course_184_2958460_250624122158_page-0001.jpg';
 import cert08 from '../assets/sertifikat/sertifikat_course_555_2958460_051024142545_page-0001.jpg';
+import cert09 from '../assets/sertifikat/1IWZHZ4HW3EH_page-0001.jpg';
+import cert10 from '../assets/sertifikat/Coursera 8MBBBV7YWK23_page-0001.jpg';
+import cert11 from '../assets/sertifikat/sertifikat_course_86_2958460_010624022515_page-0001.jpg';
+import fariedImage from '../assets/MOH_FARIED_AL_FARIZI.jpg';
+import bangkitCert from '../assets/bangkit_2024_certificate.jpg';
+import kasirSehatku from '../assets/kasir_sehatku.png';
+import asistenPraktikumImage from '../assets/ST_asprak.png';
+import cvehprafarmImage from '../assets/project/cvehprafarm.png';
+import wkskImage from '../assets/project/wksk.png';
+import wksk1Image from '../assets/project/wksk1.png';
+import segdaunImage from '../assets/project/segdaun.png';
+import segmentasiresultImage from '../assets/project/segmentasiresult.png';
+import aichatbotkskImage from '../assets/project/aichatbotksk.png';
+import chatbotkskImage from '../assets/project/chatbotksk.png';
 
 export type ProjectTrack = 'Semua' | 'All' | 'AI Engineer' | 'Data' | 'Software Development' | 'Game Development';
 
@@ -60,6 +74,9 @@ export const commonData = {
     { title: 'Belajar Fundamental Deep Learning', issuer: 'Dicoding', date: '2024', url: '#', image: cert06 },
     { title: 'Build Better GANs', issuer: 'Coursera', date: '2024', url: '#', image: cert07 },
     { title: 'NLP with Classification and Vector Spaces', issuer: 'Coursera', date: '2024', url: '#', image: cert08 },
+    { title: 'Crash Course on Python', issuer: 'Google', date: 'Sep 2024', url: 'https://coursera.org/verify/1IWZHZ4HW3EH', image: cert09 },
+    { title: 'Using Python to Interact with the Operating System', issuer: 'Google', date: 'Sep 2024', url: 'https://coursera.org/verify/8MBBBV7YWK23', image: cert10 },
+    { title: 'Memulai Pemrograman dengan Python', issuer: 'Dicoding', date: 'Jun 2024', url: 'https://dicoding.com/certificates/MRZMEYDJLPYQ', image: cert11 },
   ] as CertificateItem[]
 };
 
@@ -75,19 +92,26 @@ export const dict = {
     hero: {
       badge: 'Portofolio AI Premium',
       title: 'Membangun sistem AI praktis untuk masalah dunia nyata.',
-      desc: 'Lulusan Ilmu Komputer dari Universitas Jember dengan fokus pada Computer Vision, NLP, data cleansing, dan deployment model. Desain ini disusun agar profilmu terbaca lebih premium, tenang, dan kuat untuk kebutuhan rekrutmen.',
+      desc: 'Lulusan Ilmu Komputer dari Universitas Jember dengan fokus pada Computer Vision, NLP, data cleansing, dan deployment model.',
       exploreBtn: 'Jelajahi Proyek',
-      proofBtn: 'Lihat Bukti',
-      profileSnapshot: 'Cuplikan profil',
-      profileSubtitle: 'Fokus AI dengan pengalaman proyek mendalam',
-      currentDirection: 'Arah saat ini',
-      currentDirectionDesc: 'dengan fokus pada computer vision, NLP, pipeline data, dan deployment siap produksi.',
+      proofBtn: 'Lihat Sertifikat',
+      downloadCV: 'Unduh CV',
+      profileSnapshot: 'Profil singkat',
+      profileSubtitle: 'Fokus AI dengan kedalaman proyek nyata',
+      currentDirection: 'Fokus saat ini',
+      currentDirectionDesc: 'pada computer vision, NLP, pipeline data, dan deployment siap pakai.',
+      stats: [
+        { value: '38', label: 'Sertifikasi Keahlian' },
+        { value: '10+', label: 'Proyek Utama (AI & Data)' },
+        { value: 'Python', label: 'Ekosistem Utama' },
+        { value: 'TensorFlow', label: 'Framework Deep Learning' },
+      ],
     },
     valueProps: [
-      'Saya membangun produk AI, bukan hanya melatih model.',
-      'Pendekatan saya menggabungkan riset dan implementasi langsung.',
-      'Struktur portofolio dibuat editorial agar cepat dipahami HR.',
-      'Bukti kerja ditampilkan lewat visual proyek, dashboard, dan sertifikat.',
+      'End-to-End Development: Mampu membangun model AI dari tahap riset hingga deployment ke tahap produksi.',
+      'Computer Vision & NLP: Berpengalaman menangani ekstraksi data gambar, deteksi objek, dan pemrosesan bahasa.',
+      'Data-Driven Approach: Merancang arsitektur sistem yang didasarkan pada analisis data dan kebutuhan bisnis nyata.',
+      'Full-Stack Integration: Mampu mengintegrasikan model AI ke dalam aplikasi web (API, Dashboard) agar siap pakai.',
     ],
     sections: {
       about: {
@@ -98,7 +122,7 @@ export const dict = {
         bgLogo: 'https://upload.wikimedia.org/wikipedia/id/3/3a/Logo_Universitas_Jember.png',
         bgPeriod: '2021 - Sekarang',
         bgGpa: '3.90 / 4.00',
-        bgDegree: 'S1 Informatika, Fakultas Ilmu Komputer',
+        bgDegree: 'Sarjana Komputer (S.Kom)',
         bgThesis: 'Skripsi: Perbandingan performa ResNet50V2, EfficientNetB4, dan DenseNet201 pada Mask R-CNN untuk segmentasi penyakit karat daun apel.',
         achTitle: 'Pencapaian',
         achSubtitle: 'Kompetitif, praktis, dan berbasis proyek',
@@ -106,36 +130,35 @@ export const dict = {
       },
       experience: {
         title: 'Pengalaman',
-        copy: 'Saya terapkan format timeline profesional: setiap fase kerja punya visual, konteks, tools, dan impact yang jelas sehingga progression kamu lebih kuat di mata HR.',
+        copy: 'Berikut merupakan timeline karier saya, dari awal kuliah hingga sekarang.',
         items: [
           {
             period: 'Februari - April 2026',
             title: 'Software Development',
             org: 'Freelance',
-            image: [projectDashboardImage, chickenScanImage, flyPaperImage],
+            image: kasirSehatku,
             focus: 'Full-Stack Web Development & AI Integration',
             impact: 'Meningkatkan otomatisasi operasional apotek melalui sistem POS berbasis web yang terintegrasi dengan AI.',
             summary: 'Merancang dan membangun aplikasi web secara mandiri dari nol (Full-Stack), mengelola seluruh siklus pengembangan mulai dari antarmuka pengguna (Front-End) hingga sistem server dan basis data (Back-End). Membangun sistem kasir (POS) dan manajemen inventaris apotek berbasis web, mengintegrasikan fitur Artificial Intelligence (AI) khusus untuk meningkatkan otomatisasi operasional, serta dilengkapi sistem hak akses dan manajemen shift karyawan.',
-            tools: ['Full-Stack', 'Web App', 'AI Integration', 'POS'],
+            tools: ['Full-Stack', 'Web App', 'AI Integration', 'POS', 'Laravel'],
             highlights: [
               'Merancang dan membangun aplikasi web secara mandiri dari nol (Full-Stack).',
               'Mengelola seluruh siklus pengembangan (Front-End hingga Back-End).',
               'Membangun sistem kasir (POS) dan manajemen inventaris apotek.',
-              'Mengintegrasikan fitur Artificial Intelligence (AI) untuk otomatisasi operasional.',
-              'Mengimplementasikan sistem hak akses dan manajemen shift karyawan.'
+              'Mengintegrasikan fitur Artificial Intelligence (AI) untuk otomatisasi operasional.'
             ]
           },
           {
             period: 'Sep - Des 2025',
             title: 'Asisten Praktikum',
             org: 'Lab. AI Universitas Jember',
-            image: [flyPaperImage, chickenScanImage, projectDashboardImage],
-            focus: 'Edukasi AI dan dukungan laboratorium',
+            image: asistenPraktikumImage,
+            focus: 'Asisten Praktikum Kelas Computer Vision dan Data Visualization',
             impact: 'Membantu mahasiswa memahami computer vision, visualisasi, dan implementasi deep learning melalui sesi panduan dan umpan balik tugas.',
             summary: 'Memandu sesi lab untuk Computer Vision dan Visualisasi Data menggunakan Python, OpenCV, TensorFlow, dan library visualisasi. Menyiapkan materi, mendemonstrasikan teknik, dan mengevaluasi tugas terkait pemrosesan gambar dan deep learning.',
             tools: ['Python', 'OpenCV', 'TensorFlow'],
             highlights: [
-              'Memandu sesi praktikum untuk 50+ mahasiswa mengenai Computer Vision dan Visualisasi Data.',
+              'Memandu sesi praktikum untuk 40+ mahasiswa mengenai Computer Vision dan Visualisasi Data.',
               'Menyusun materi praktikum berbasis Python, OpenCV, dan library visualisasi terkini.',
               'Mendemonstrasikan teknik deep learning dan mengevaluasi implementasi mahasiswa.',
               'Membantu penyelesaian error pada model TensorFlow yang dibangun oleh mahasiswa.'
@@ -146,7 +169,7 @@ export const dict = {
             period: 'Feb - Jun 2025',
             title: 'Data Scientist Intern',
             org: 'Social Economic Accelerator Lab (SEAL)',
-            image: [chickenScanImage, flyPaperImage, projectDashboardImage],
+            image: fariedImage,
             focus: 'Data engineering dan cleansing',
             impact: 'Meningkatkan konsistensi dataset di 3.000+ data pemerintah dan mengurangi masalah penggabungan melalui alur pencocokan semantik.',
             summary: 'Membangun modul pembersihan otomatis untuk 3.000+ dataset pemerintah, menggunakan Sentence-BERT dan kesamaan TF-IDF untuk pencocokan data regional, dan mengonfigurasi pipeline ETL dengan Apache NiFi dan Airflow.',
@@ -162,8 +185,8 @@ export const dict = {
           {
             period: 'Sep - Des 2024',
             title: 'Student Machine Learning',
-            org: 'Bangkit Academy 2024',
-            image: [projectDashboardImage, chickenScanImage, flyPaperImage],
+            org: 'Bangkit Academy 2022 by Google, GoTo, Traveloka',
+            image: bangkitCert,
             focus: 'Applied ML dan deployment',
             impact: 'Membangun solusi pertanian berbasis model dengan akurasi terukur dan pengakuan formal melalui sertifikasi dan kelulusan dengan predikat.',
             summary: 'Membangun TomKits untuk deteksi penyakit tomat menggunakan EfficientNet dengan akurasi 98% dan mendapatkan TensorFlow Developer Professional Certificate serta Graduate Distinction.',
@@ -197,7 +220,7 @@ export const dict = {
             title: 'AI Assistant Chatbot for Pharmacy POS',
             category: 'LLM · RAG · NLP',
             period: 'Apr 2026',
-            image: [projectDashboardImage, flyPaperImage, chickenScanImage],
+            image: [aichatbotkskImage, chatbotkskImage],
             tracks: ['AI Engineer'] as ProjectTrack[],
             featured: true,
             outcome: 'Menambahkan dukungan pencarian semantik dan rekomendasi obat untuk alur kerja apotek.',
@@ -210,6 +233,20 @@ export const dict = {
             highlights: ['RAG pipeline untuk data obat', 'Pencarian semantik dengan Sentence-BERT', 'Integrasi FastAPI ke alur POS'],
           },
           {
+            title: 'Kasir-Sehatku',
+            summary: 'Aplikasi kasir apotek berbasis web untuk mengelola transaksi dan inventaris obat.',
+            image: [kasirSehatku, wkskImage, wksk1Image],
+            category: 'Web App',
+            period: '2024',
+            tracks: ['Software Development'] as ProjectTrack[],
+            featured: true,
+            outcome: 'Mempermudah pencatatan transaksi harian dan manajemen stok obat secara efisien.',
+            stack: ['Laravel', 'PHP', 'MySQL'],
+            demoUrl: 'http://kasir-sehatku.com/',
+            demoLabel: 'Kunjungi Website',
+            highlights: ['Manajemen stok dan inventaris obat', 'Pencatatan transaksi kasir harian', 'Dibangun menggunakan framework Laravel'],
+          },
+          {
             title: 'AI Public Speaking Coach',
             category: 'Computer Vision · Speech · NLP',
             period: 'Nov 2025',
@@ -219,7 +256,8 @@ export const dict = {
             outcome: 'Mengubah sinyal multimodal menjadi umpan balik yang dapat ditindaklanjuti untuk performa berbicara.',
             summary: 'Sistem AI multi-modal menggunakan MediaPipe, YOLO, BERT, Wav2Vec2, dan Silero VAD untuk menganalisis postur, artikulasi, kata pengisi, tempo, dan relevansi topik.',
             stack: ['MediaPipe', 'YOLO', 'BERT'],
-            repoUrl: 'https://github.com/ziee2',
+            repoUrl: 'https://huggingface.co/Cyberlace',
+            repoLabel: 'HF',
             highlights: ['Analisis pose dan gesture real-time', 'Evaluasi suara dan tempo bicara', 'Rekomendasi yang langsung bisa ditindaklanjuti'],
           },
           {
@@ -277,7 +315,7 @@ export const dict = {
           {
             title: 'Apple Leaf Rust Disease Segmentation',
             summary: 'Computer vision segmentasi penyakit rust pada daun menggunakan Mask R-CNN dengan 3 backbone (ResNet50V2, EfficientNetB4, DenseNet201) dan anotasi data.',
-            image: projectDashboardImage,
+            image: [segdaunImage, segmentasiresultImage],
             category: 'Computer Vision',
             period: '2026',
             tracks: ['AI Engineer'] as ProjectTrack[],
@@ -323,9 +361,9 @@ export const dict = {
             highlights: ['Implementasi user-based collaborative filtering', 'Implementasi item-based collaborative filtering', 'Analisis matriks kemiripan untuk rekomendasi'],
           },
           {
-            title: 'Company Profile Website CV EHPRA Farm',
+            title: 'CV EHPRA FARM',
             summary: 'Website company profile untuk CV EHPRA Farm yang dibangun menggunakan HTML dan CSS.',
-            image: projectDashboardImage,
+            image: cvehprafarmImage,
             category: 'Web Development',
             period: '2024',
             tracks: ['Software Development'] as ProjectTrack[],
@@ -335,20 +373,6 @@ export const dict = {
             demoUrl: 'http://cvehprafarm.com/',
             demoLabel: 'Kunjungi Website',
             highlights: ['Desain antarmuka responsif', 'Pengembangan murni menggunakan HTML dan CSS', 'Struktur website yang SEO-friendly'],
-          },
-          {
-            title: 'Kasir-Sehatku',
-            summary: 'Aplikasi kasir apotek berbasis web untuk mengelola transaksi dan inventaris obat.',
-            image: projectDashboardImage,
-            category: 'Web App',
-            period: '2024',
-            tracks: ['Software Development'] as ProjectTrack[],
-            featured: false,
-            outcome: 'Mempermudah pencatatan transaksi harian dan manajemen stok obat secara efisien.',
-            stack: ['Laravel', 'PHP', 'MySQL'],
-            demoUrl: 'http://kasir-sehatku.com/',
-            demoLabel: 'Kunjungi Website',
-            highlights: ['Manajemen stok dan inventaris obat', 'Pencatatan transaksi kasir harian', 'Dibangun menggunakan framework Laravel'],
           }
         ]
       },
@@ -366,9 +390,9 @@ export const dict = {
         copy: 'Koleksi sertifikat tetap ditampilkan sebagai bukti pendukung kompetensi dan konsistensi pembelajaran di jalur AI/Data.',
       },
       closing: {
-        note: 'Closing note',
-        title: 'Berorientasi solusi dan siap berkontribusi pada produk AI yang berdampak.',
-        desc: 'Struktur baru ini dibuat lebih premium, tidak pasaran, dan lebih visual sehingga value proyekmu terbaca kuat oleh recruiter maupun hiring manager.'
+        note: 'Closing Note',
+        title: '"Hope is not a strategy, but it is the fuel that keeps every great strategy alive."',
+        desc: 'Terus belajar, berinovasi, dan membangun solusi yang bermakna. Karena masa depan tidak hanya direncanakan, tapi diciptakan lewat kerja keras hari ini.'
       }
     }
   },
@@ -383,19 +407,26 @@ export const dict = {
     hero: {
       badge: 'Premium AI Portfolio',
       title: 'Building practical AI systems for real-world problems.',
-      desc: 'Computer Science graduate from University of Jember focusing on Computer Vision, NLP, data cleansing, and model deployment. This design is tailored to make your profile look premium, composed, and strong for recruitment purposes.',
+      desc: 'Computer Science graduate from University of Jember focusing on Computer Vision, NLP, data cleansing, and model deployment.',
       exploreBtn: 'Explore Projects',
       proofBtn: 'View Evidence',
+      downloadCV: 'Download CV',
       profileSnapshot: 'Profile snapshot',
       profileSubtitle: 'AI focus with real project depth',
       currentDirection: 'Current direction',
       currentDirectionDesc: 'with a focus on computer vision, NLP, data pipelines, and product-ready deployment.',
+      stats: [
+        { value: '38', label: 'Skill Certifications' },
+        { value: '10+', label: 'Major Projects (AI & Data)' },
+        { value: 'Python', label: 'Primary Ecosystem' },
+        { value: 'TensorFlow', label: 'Deep Learning Framework' },
+      ],
     },
     valueProps: [
-      'I build AI products, not just train models.',
-      'My approach combines research with direct implementation.',
-      'The portfolio structure is editorialized for quick HR comprehension.',
-      'Work evidence is displayed through project visuals, dashboards, and certificates.',
+      'End-to-End Development: Capable of building AI models from the research phase to production deployment.',
+      'Computer Vision & NLP: Experienced in image data extraction, object detection, and natural language processing.',
+      'Data-Driven Approach: Architecting solutions based on comprehensive data analysis and real business needs.',
+      'Full-Stack Integration: Seamlessly integrating AI models into web applications (APIs, Dashboards) for immediate use.',
     ],
     sections: {
       about: {
@@ -406,7 +437,7 @@ export const dict = {
         bgLogo: 'https://upload.wikimedia.org/wikipedia/id/3/3a/Logo_Universitas_Jember.png',
         bgPeriod: '2021 - Present',
         bgGpa: '3.90 / 4.00',
-        bgDegree: 'Bachelor of Informatics, Faculty of Computer Science',
+        bgDegree: 'Computer Science (S.Kom)',
         bgThesis: 'Thesis: Performance comparison of ResNet50V2, EfficientNetB4, and DenseNet201 in Mask R-CNN for rust disease segmentation in apple leaves.',
         achTitle: 'Achievements',
         achSubtitle: 'Competitive, practical, and project-driven',
@@ -420,7 +451,7 @@ export const dict = {
             period: 'February - April 2026',
             title: 'Software Development',
             org: 'Freelance',
-            image: [projectDashboardImage, chickenScanImage, flyPaperImage],
+            image: kasirSehatku,
             focus: 'Full-Stack Web Development & AI Integration',
             impact: 'Improved pharmacy operational automation through an AI-integrated web-based POS system.',
             summary: 'Designed and built a web application independently from scratch (Full-Stack), managing the entire development cycle from the user interface (Front-End) to the server system and database (Back-End). Built a web-based point-of-sale (POS) and pharmacy inventory management system, integrating specific Artificial Intelligence (AI) features to enhance operational automation, complete with access rights and employee shift management systems.',
@@ -437,7 +468,7 @@ export const dict = {
             period: 'Sep - Dec 2025',
             title: 'Teaching Assistant',
             org: 'Lab. AI University of Jember',
-            image: [flyPaperImage, chickenScanImage, projectDashboardImage],
+            image: asistenPraktikumImage,
             focus: 'AI education and lab support',
             impact: 'Helped students understand computer vision, visualization, and deep learning implementation through guided sessions and assignment feedback.',
             summary: 'Guided lab sessions for Computer Vision and Data Visualization using Python, OpenCV, TensorFlow, and visualization libraries. Prepared materials, demonstrated techniques, and evaluated assignments around image processing and deep learning.',
@@ -454,7 +485,7 @@ export const dict = {
             period: 'Feb - Jun 2025',
             title: 'Data Scientist Intern',
             org: 'Social Economic Accelerator Lab (SEAL)',
-            image: [chickenScanImage, flyPaperImage, projectDashboardImage],
+            image: fariedImage,
             focus: 'Data engineering and cleansing',
             impact: 'Improved dataset consistency across 3,000+ government records and reduced merge issues through semantic matching workflows.',
             summary: 'Built an automated cleansing module for 3,000+ government datasets, used Sentence-BERT and TF-IDF similarity for regional data matching, and configured ETL pipelines with Apache NiFi and Airflow.',
@@ -471,7 +502,7 @@ export const dict = {
             period: 'Sep - Dec 2024',
             title: 'Student Machine Learning',
             org: 'Bangkit Academy 2024',
-            image: [projectDashboardImage, chickenScanImage, flyPaperImage],
+            image: bangkitCert,
             focus: 'Applied ML and deployment',
             impact: 'Built a model-driven agriculture solution with measurable accuracy and formal recognition through certification and graduate distinction.',
             summary: 'Built TomKits for tomato disease detection using EfficientNet with 98% accuracy and earned TensorFlow Developer Professional Certificate plus Graduate Distinction.',
@@ -505,7 +536,7 @@ export const dict = {
             title: 'AI Assistant Chatbot for Pharmacy POS',
             category: 'LLM · RAG · NLP',
             period: 'Apr 2026',
-            image: [projectDashboardImage, flyPaperImage, chickenScanImage],
+            image: [aichatbotkskImage, chatbotkskImage],
             tracks: ['AI Engineer'] as ProjectTrack[],
             featured: true,
             outcome: 'Added semantic retrieval and medication recommendation support for a pharmacy workflow.',
@@ -518,6 +549,20 @@ export const dict = {
             highlights: ['RAG pipeline for medication data', 'Semantic search with Sentence-BERT', 'FastAPI integration into POS flow'],
           },
           {
+            title: 'Kasir-Sehatku',
+            summary: 'Web-based pharmacy cashier application to manage transactions and medicine inventory.',
+            image: [kasirSehatku, wkskImage, wksk1Image],
+            category: 'Web App',
+            period: '2024',
+            tracks: ['Software Development'] as ProjectTrack[],
+            featured: true,
+            outcome: 'Simplified daily transaction recording and medicine stock management efficiently.',
+            stack: ['Laravel', 'PHP', 'MySQL'],
+            demoUrl: 'http://kasir-sehatku.com/',
+            demoLabel: 'Visit Website',
+            highlights: ['Medicine stock and inventory management', 'Daily cashier transaction recording', 'Built using the Laravel framework'],
+          },
+          {
             title: 'AI Public Speaking Coach',
             category: 'Computer Vision · Speech · NLP',
             period: 'Nov 2025',
@@ -527,7 +572,8 @@ export const dict = {
             outcome: 'Turned multimodal signals into actionable feedback for speaking performance.',
             summary: 'Multi-modal AI system using MediaPipe, YOLO, BERT, Wav2Vec2, and Silero VAD to analyze posture, articulation, filler words, tempo, and topic relevance.',
             stack: ['MediaPipe', 'YOLO', 'BERT'],
-            repoUrl: 'https://github.com/ziee2',
+            repoUrl: 'https://huggingface.co/Cyberlace',
+            repoLabel: 'HF',
             highlights: ['Real-time pose and gesture analysis', 'Voice and speaking tempo evaluation', 'Actionable recommendations'],
           },
           {
@@ -585,7 +631,7 @@ export const dict = {
           {
             title: 'Apple Leaf Rust Disease Segmentation',
             summary: 'Computer vision rust disease segmentation on leaves using Mask R-CNN with 3 backbones (ResNet50V2, EfficientNetB4, DenseNet201) and custom data annotation.',
-            image: projectDashboardImage,
+            image: [segdaunImage, segmentasiresultImage],
             category: 'Computer Vision',
             period: '2026',
             tracks: ['AI Engineer'] as ProjectTrack[],
@@ -631,9 +677,9 @@ export const dict = {
             highlights: ['Implemented user-based collaborative filtering', 'Implemented item-based collaborative filtering', 'Analyzed similarity matrices for recommendations'],
           },
           {
-            title: 'Company Profile Website CV EHPRA Farm',
+            title: 'CV EHPRA FARM',
             summary: 'Company profile website for CV EHPRA Farm built using HTML and CSS.',
-            image: projectDashboardImage,
+            image: cvehprafarmImage,
             category: 'Web Development',
             period: '2024',
             tracks: ['Software Development'] as ProjectTrack[],
@@ -643,20 +689,6 @@ export const dict = {
             demoUrl: 'http://cvehprafarm.com/',
             demoLabel: 'Visit Website',
             highlights: ['Responsive interface design', 'Pure development using HTML and CSS', 'SEO-friendly website structure'],
-          },
-          {
-            title: 'Kasir-Sehatku',
-            summary: 'Web-based pharmacy cashier application to manage transactions and medicine inventory.',
-            image: projectDashboardImage,
-            category: 'Web App',
-            period: '2024',
-            tracks: ['Software Development'] as ProjectTrack[],
-            featured: false,
-            outcome: 'Simplified daily transaction recording and medicine stock management efficiently.',
-            stack: ['Laravel', 'PHP', 'MySQL'],
-            demoUrl: 'http://kasir-sehatku.com/',
-            demoLabel: 'Visit Website',
-            highlights: ['Medicine stock and inventory management', 'Daily cashier transaction recording', 'Built using the Laravel framework'],
           }
         ]
       },
@@ -664,8 +696,8 @@ export const dict = {
         title: 'Skills',
         copy: 'The skills section is structured into three pillars so recruiters can immediately see core technical strengths, rather than just a list of tools.',
         groups: [
-          { title: 'AI / ML', items: ['Python', 'TensorFlow', 'PyTorch', 'Keras', 'Hugging Face', 'Flask', 'FastAPI'] },
-          { title: 'Data', items: ['SQL', 'MySQL', 'PostgreSQL', 'ETL', 'Apache NiFi', 'Airflow', 'Web Scraping'] },
+          { title: 'AI / ML', items: ['Python', 'TensorFlow', 'PyTorch', 'Keras', 'Hugging Face', 'Flask', 'FastAPI', 'LLM', 'RAG'] },
+          { title: 'Data', items: ['MySQL', 'PostgreSQL', 'ETL', 'Apache NiFi', 'Web Scraping', 'Kaggle', 'Roboflow'] },
           { title: 'Web / Deployment', items: ['PHP', 'JavaScript', 'Laravel', 'Docker', 'REST API', 'Git', 'Agile collaboration'] },
         ]
       },
@@ -674,9 +706,9 @@ export const dict = {
         copy: 'A collection of certificates is displayed as supporting evidence of competence and consistent learning in the AI/Data track.',
       },
       closing: {
-        note: 'Closing note',
-        title: 'Solution-oriented and ready to contribute to impactful AI products.',
-        desc: 'This new structure is made to be more premium, distinct, and visual so your project value is strongly perceived by both recruiters and hiring managers.'
+        note: 'Closing Note',
+        title: '"Hope is not a strategy, but it is the fuel that keeps every great strategy alive."',
+        desc: 'Keep learning, innovating, and building meaningful solutions. Because the future is not just planned, it is created through hard work today.'
       }
     }
   }

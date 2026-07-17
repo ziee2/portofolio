@@ -10,6 +10,7 @@ import projectDashboardImage from '../assets/project/Dashboard Owner.jpg';
 import flyPaperImage from '../assets/project/file_2024-06-01_04.49.33.png';
 import chickenScanImage from '../assets/project/file_2024-06-01_04.50.40.png';
 import logoUnej from '../assets/Logo-UNEJ-2020.png';
+import ukmLaosImage from '../assets/ukmlaos.jpg';
 
 import cert01 from '../assets/sertifikat/Coursera SIIEEXK95VJ1_page-0001.jpg';
 import cert02 from '../assets/sertifikat/Coursera UZJXQ81I09FB_page-0001.jpg';
@@ -35,12 +36,7 @@ const socialLinks = [
   { label: 'GitHub', href: 'https://github.com/ziee2' },
 ];
 
-const stats = [
-  { value: '38', label: 'Sertifikasi Keahlian' },
-  { value: '10+', label: 'Proyek Utama (AI & Data)' },
-  { value: 'Python', label: 'Ekosistem Utama' },
-  { value: 'TensorFlow', label: 'Framework Deep Learning' },
-];
+
 
 export type ExperienceItem = {
   period: string;
@@ -78,6 +74,7 @@ export default function Home() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [selectedExperience, setSelectedExperience] = useState<ExperienceItem | null>(null);
   const [selectedCertificate, setSelectedCertificate] = useState<CertificateItem | null>(null);
+  const [selectedImage, setSelectedImage] = useState<StaticImageData | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const [language, setLanguage] = useState<'id' | 'en'>('en');
@@ -124,20 +121,9 @@ export default function Home() {
 
   const filteredProjects = useMemo(() => {
     if (activeProjectTrack === 'Semua' || activeProjectTrack === 'All') {
-      const selected: ProjectItem[] = [];
-      const tracksToPick = ['AI Engineer', 'Data', 'Software Development', 'Game Development'];
-      const usedTitles = new Set<string>();
-
-      for (const track of tracksToPick) {
-        const proj = projects.find((p: ProjectItem) => p?.tracks?.includes(track as ProjectTrack) && !usedTitles.has(p.title));
-        if (proj) {
-          selected.push(proj);
-          usedTitles.add(proj.title);
-        }
-      }
-      return selected.length > 0 ? selected : projects.slice(0, 4);
+      return projects;
     }
-    
+
     const filtered = projects.filter((project: ProjectItem) => project?.tracks?.includes(activeProjectTrack));
     return filtered.length > 0 ? filtered : projects;
   }, [activeProjectTrack, projects]);
@@ -152,7 +138,7 @@ export default function Home() {
   const extraProjects = sortedProjects.slice(3);
 
   useEffect(() => {
-    if (!selectedProject && !selectedExperience) {
+    if (!selectedProject && !selectedExperience && !selectedCertificate && !selectedImage) {
       return;
     }
 
@@ -164,6 +150,7 @@ export default function Home() {
         setSelectedProject(null);
         setSelectedExperience(null);
         setSelectedCertificate(null);
+        setSelectedImage(null);
       }
     };
 
@@ -173,7 +160,7 @@ export default function Home() {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener('keydown', onEsc);
     };
-  }, [selectedProject, selectedExperience]);
+  }, [selectedProject, selectedExperience, selectedCertificate, selectedImage]);
 
   return (
     <main className="relative min-h-screen bg-[#f7f4ef] text-ink selection:bg-cyan-100 selection:text-cyan-900">
@@ -223,7 +210,7 @@ export default function Home() {
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
             <section className="relative px-6 pb-8 md:px-10 lg:px-16">
-              <div className="mx-auto grid max-w-7xl gap-10 pb-14 pt-28 lg:grid-cols-[1fr_0.88fr] lg:items-center lg:pb-20 lg:pt-36">
+              <div className="mx-auto grid max-w-7xl gap-10 pb-10 pt-28 lg:grid-cols-[1fr_0.88fr] lg:items-center lg:pb-16 lg:pt-36">
                 <motion.div variants={sectionFade} initial="hidden" animate="show" custom={0} className="max-w-3xl">
                   <span className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-accent">
                     {t.hero.badge}
@@ -249,6 +236,10 @@ export default function Home() {
                     </a>
                     <a href="#certificates" className="rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(15,23,42,0.08)]">
                       {t.hero.proofBtn}
+                    </a>
+                    <a href="/cv/CV_Moh. Faried Al Farizi.pdf" download target="_blank" rel="noopener noreferrer" className="rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(15,23,42,0.08)] flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
+                      {language === 'id' ? 'Unduh CV' : 'Download CV'}
                     </a>
                   </div>
 
@@ -304,7 +295,7 @@ export default function Home() {
 
             <section className="mx-auto max-w-7xl px-6 py-4 md:px-10 lg:px-16">
               <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
-                {stats.map((stat, index) => (
+                {t.hero.stats.map((stat, index) => (
                   <motion.div key={stat.label} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ duration: 0.55, delay: index * 0.05 }} className="rounded-[1rem] border border-cyan-100 bg-gradient-to-br from-white via-[#fcfeff] to-cyan-50 p-4 shadow-sm">
                     <p className="text-xl font-bold text-ink md:text-2xl">{stat.value}</p>
                     <p className="mt-1 text-[11px] font-semibold uppercase tracking-wider text-muted md:text-xs">{stat.label}</p>
@@ -345,12 +336,12 @@ export default function Home() {
                       <div className="mt-4 flex flex-wrap items-center gap-4 border-y border-slate-100 py-4">
                         <div className="flex flex-col">
                           <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">{language === 'en' ? 'Degree' : 'Gelar'}</span>
-                          <span className="mt-0.5 text-sm font-semibold text-slate-700">Sarjana Komputer (S.Kom)</span>
+                          <span className="mt-0.5 text-sm font-semibold text-slate-700">{t.sections.about.bgDegree}</span>
                         </div>
                         <div className="hidden h-8 w-px bg-slate-200 md:block" />
                         <div className="flex flex-col">
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">IPK</span>
-                          <span className="mt-0.5 text-sm font-semibold text-cyan-600">3.90 / 4.00</span>
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">{language === 'en' ? 'GPA' : 'IPK'}</span>
+                          <span className="mt-0.5 text-sm font-semibold text-cyan-600">{t.sections.about.bgGpa}</span>
                         </div>
                       </div>
                       <p className="mt-4 text-[13px] leading-relaxed text-slate-600 md:text-sm">
@@ -367,7 +358,12 @@ export default function Home() {
                           </li>
                           <li className="flex items-start gap-2">
                             <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500" />
-                            <span>{language === 'en' ? '3rd place in Laos development by UKM Linux and Open Source' : 'Juara 3 Laos Development oleh UKM Linux dan Open Source'}</span>
+                            <div className="flex flex-col gap-2.5">
+                              <span>{language === 'en' ? '3rd place in Laos development by UKM Linux and Open Source' : 'Juara 3 Laos Development oleh UKM Linux dan Open Source'}</span>
+                              <button type="button" onClick={() => setSelectedImage(ukmLaosImage)} className="text-left w-max">
+                                <Image src={ukmLaosImage} alt="UKM Laos Achievement" width={400} height={300} className="h-auto w-36 rounded-lg border border-slate-200/60 shadow-sm object-cover transition-transform hover:scale-105" />
+                              </button>
+                            </div>
                           </li>
                         </ul>
                       </div>
@@ -393,7 +389,7 @@ export default function Home() {
                       <div className="group grid gap-4 md:gap-6 rounded-[1.5rem] border border-slate-200/80 bg-white/60 p-3.5 md:p-5 shadow-sm backdrop-blur-md transition hover:-translate-y-1 hover:border-cyan-200 hover:shadow-md lg:grid-cols-[1.1fr_0.9fr]">
                         <div className="relative order-1 lg:order-2 rounded-[1.25rem] border border-slate-100/50 bg-[#f7f4ef]/40 p-2 md:p-2.5 shadow-inner transition-colors group-hover:bg-[#f7f4ef]/80">
                           <div className="relative h-40 w-full overflow-hidden rounded-[0.85rem] md:h-full md:min-h-[13rem]">
-                            <Image src={Array.isArray(item.image) ? item.image[0] : item.image} alt={item.title} fill className="object-cover object-center transition duration-700 ease-out group-hover:scale-105" />
+                            <Image src={Array.isArray(item.image) ? item.image[0] : item.image} alt={item.title} fill className="object-contain bg-slate-50 object-center transition duration-700 ease-out group-hover:scale-105" />
                             <div className="absolute inset-0 bg-gradient-to-t from-ink/20 via-transparent to-transparent opacity-60" />
                           </div>
                         </div>
@@ -413,7 +409,7 @@ export default function Home() {
                           <p className="mt-2.5 text-[11px] leading-5 text-muted md:text-xs md:leading-6">{item.summary}</p>
 
                           <button type="button" onClick={() => { setSelectedExperience(item); setCurrentImageIndex(0); }} className="mt-2 text-[10px] font-semibold text-ink transition hover:text-accent">
-                            Lihat detail
+                            {t.sections.projects.seeDetail}
                           </button>
                         </div>
                       </div>
@@ -425,7 +421,7 @@ export default function Home() {
 
             <Section id="projects" title={t.sections.projects.title} copy={t.sections.projects.copy}>
               <div className="flex flex-wrap items-center gap-2">
-                {projectTracks.map((track) => (
+                {t.sections.projects.tracks.map((track) => (
                   <motion.button
                     key={track}
                     type="button"
@@ -435,7 +431,7 @@ export default function Home() {
                     }}
                     whileHover={{ y: -1 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition md:text-sm ${activeProjectTrack === track ? 'border-ink bg-ink text-white' : 'border-slate-200 bg-white text-muted hover:border-cyan-200 hover:text-ink'}`}
+                    className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition md:text-sm ${(activeProjectTrack === track || (track === t.sections.projects.tracks[0] && (activeProjectTrack === 'Semua' || activeProjectTrack === 'All'))) ? 'border-ink bg-ink text-white' : 'border-slate-200 bg-white text-muted hover:border-cyan-200 hover:text-ink'}`}
                   >
                     {track}
                   </motion.button>
@@ -455,7 +451,7 @@ export default function Home() {
                     <div className="grid gap-3 lg:grid-cols-[1.18fr_0.82fr]">
                       <motion.article whileHover={{ y: -4 }} className="group overflow-hidden rounded-[1.45rem] border border-slate-200 bg-white shadow-soft transition">
                         <div className="relative overflow-hidden">
-                          <Image src={Array.isArray(leadProject.image) ? leadProject.image[0] : leadProject.image} alt={leadProject.title} width={1600} height={1000} className="h-44 w-full object-cover object-center transition duration-500 group-hover:scale-105 md:h-56" />
+                          <Image src={Array.isArray(leadProject.image) ? leadProject.image[0] : leadProject.image} alt={leadProject.title} width={1600} height={1000} className="h-44 w-full object-contain bg-slate-50 object-center transition duration-500 group-hover:scale-105 md:h-56" />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/15 to-transparent" />
                           <div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[10px] font-semibold text-ink">{leadProject.period}</div>
                           <div className="absolute right-4 top-4 rounded-full bg-black/75 px-3 py-1 text-[10px] font-semibold text-white">{leadProject.tracks[0]}</div>
@@ -474,11 +470,11 @@ export default function Home() {
                           <p className="mt-3 text-[11px] leading-relaxed text-slate-500 md:text-xs md:leading-relaxed">{leadProject.summary}</p>
                           <div className="mt-5 flex flex-wrap items-center gap-2 pt-4 border-t border-slate-100">
                             <button type="button" onClick={() => { setSelectedProject(leadProject); setCurrentImageIndex(0); }} className="group flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-[11px] font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800">
-                              Detail <span>→</span>
+                              {t.sections.projects.detail} <span>→</span>
                             </button>
                             {leadProject.repoUrl && leadProject.repoUrl !== '' && (
                               <a href={leadProject.repoUrl} target="_blank" rel="noreferrer" className="rounded-full border border-slate-200 bg-white px-4 py-2 text-[11px] font-semibold text-slate-600 transition hover:bg-slate-50 hover:text-ink">
-                                GitHub
+                                {leadProject.repoLabel || 'GitHub'}
                               </a>
                             )}
                             {leadProject.demoUrl ? (
@@ -493,7 +489,7 @@ export default function Home() {
                         {sideProjects.map((project) => (
                           <motion.article key={project.title} whileHover={{ y: -3 }} className="group overflow-hidden rounded-[1.2rem] border border-slate-200 bg-white shadow-sm transition">
                             <div className="relative overflow-hidden">
-                              <Image src={Array.isArray(project.image) ? project.image[0] : project.image} alt={project.title} width={1200} height={800} className="h-28 w-full object-cover object-center transition duration-500 group-hover:scale-105" />
+                              <Image src={Array.isArray(project.image) ? project.image[0] : project.image} alt={project.title} width={1200} height={800} className="h-28 w-full object-contain bg-slate-50 object-center transition duration-500 group-hover:scale-105" />
                               <div className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-0.5 text-[10px] font-semibold text-ink">{project.period}</div>
                             </div>
                             <div className="p-3.5">
@@ -501,11 +497,11 @@ export default function Home() {
                               <h4 className="mt-1.5 text-sm font-semibold text-ink">{project.title}</h4>
                               <p className="mt-1.5 text-[11px] leading-5 text-muted">{project.outcome}</p>
                               <div className="mt-2 flex items-center gap-2">
-                                <button type="button" onClick={() => setSelectedProject(project)} className="text-[10px] font-semibold text-ink transition hover:text-accent">
-                                  Detail
+                                <button type="button" onClick={() => { setSelectedProject(project); setCurrentImageIndex(0); }} className="text-[10px] font-semibold text-ink transition hover:text-accent">
+                                  {t.sections.projects.detail}
                                 </button>
                                 <a href={project.repoUrl} target="_blank" rel="noreferrer" className="text-[10px] font-semibold text-ink/80 transition hover:text-accent">
-                                  GitHub
+                                  {project.repoLabel || 'GitHub'}
                                 </a>
                               </div>
                             </div>
@@ -533,22 +529,22 @@ export default function Home() {
                   </div>
 
                   {showMoreProjects && extraProjects.length > 0 ? (
-                    <div className="columns-1 gap-5 md:columns-2 xl:columns-3">
+                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                       {extraProjects.map((project, index) => (
-                        <motion.article key={project.title} layout initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="mb-5 break-inside-avoid overflow-hidden rounded-[1.15rem] border border-slate-200 bg-white shadow-sm">
-                          <Image src={Array.isArray(project.image) ? project.image[0] : project.image} alt={project.title} width={1200} height={800} className={`w-full object-cover ${index % 2 === 0 ? 'h-28' : 'h-36'}`} />
-                          <div className="p-3.5">
-                            <div className="flex items-center justify-between gap-2">
-                              <h4 className="text-xs font-semibold text-ink md:text-sm">{project.title}</h4>
-                              <span className="rounded-full bg-ink/5 px-2 py-0.5 text-[10px] font-semibold text-muted">{project.category}</span>
+                        <motion.article key={project.title} layout initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col h-full overflow-hidden rounded-[1.15rem] border border-slate-200 bg-white shadow-sm">
+                          <Image src={Array.isArray(project.image) ? project.image[0] : project.image} alt={project.title} width={1200} height={800} className="w-full object-contain bg-slate-50 h-36" />
+                          <div className="p-3.5 flex flex-col flex-1">
+                            <div className="flex items-start justify-between gap-2">
+                              <h4 className="text-xs font-semibold text-ink md:text-sm line-clamp-2">{project.title}</h4>
+                              <span className="shrink-0 rounded-full bg-ink/5 px-2 py-0.5 text-[10px] font-semibold text-muted">{project.category}</span>
                             </div>
-                            <p className="mt-1 text-[10px] leading-5 text-muted md:text-[11px] md:leading-5">{project.summary}</p>
-                            <div className="mt-2 flex items-center gap-2">
+                            <p className="mt-1 text-[10px] leading-5 text-muted md:text-[11px] md:leading-5 line-clamp-3">{project.summary}</p>
+                            <div className="mt-auto pt-3 flex items-center gap-2">
                               <button type="button" onClick={() => setSelectedProject(project)} className="text-[10px] font-semibold text-ink transition hover:text-accent">
-                                Lihat detail
+                                {t.sections.projects.seeDetail}
                               </button>
                               <a href={project.repoUrl} target="_blank" rel="noreferrer" className="text-[10px] font-semibold text-ink/80 transition hover:text-accent">
-                                GitHub
+                                {project.repoLabel || 'GitHub'}
                               </a>
                             </div>
                           </div>
@@ -562,17 +558,13 @@ export default function Home() {
 
             <Section id="skills" title={t.sections.skills.title} copy={t.sections.skills.copy}>
               <div className="grid gap-3 lg:grid-cols-3">
-                {[
-                  { title: 'AI / ML', items: ['Python', 'TensorFlow', 'PyTorch', 'Keras', 'Hugging Face', 'Flask', 'FastAPI'] },
-                  { title: 'Data', items: ['SQL', 'MySQL', 'PostgreSQL', 'ETL', 'Apache NiFi', 'Airflow', 'Web Scraping'] },
-                  { title: 'Web / Deployment', items: ['PHP', 'JavaScript', 'Laravel', 'Docker', 'REST API', 'Git', 'Agile collaboration'] },
-                ].map((group, index) => (
+                {t.sections.skills.groups.map((group: { title: string, items: string[] }, index: number) => (
                   <motion.article key={group.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.2 }} transition={{ duration: 0.5, delay: index * 0.06 }} className="relative overflow-hidden rounded-[1.25rem] border border-white/60 bg-white/40 p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-xl">
                     <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-cyan-200/40 blur-2xl" />
                     <h3 className="relative z-10 text-sm font-bold tracking-wide text-cyan-900 md:text-base">{group.title}</h3>
                     <div className="relative z-10 mt-3 flex flex-wrap gap-2">
-                      {group.items.map((item) => (
-                        <span key={item} className="rounded-xl border border-cyan-100 bg-white/70 px-3 py-1.5 text-xs font-semibold text-cyan-800 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md md:text-[13px]">
+                      {group.items.map((item, idx) => (
+                        <span key={`${item}-${idx}`} className="rounded-xl border border-cyan-100 bg-white/70 px-3 py-1.5 text-xs font-semibold text-cyan-800 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md md:text-[13px]">
                           {item}
                         </span>
                       ))}
@@ -584,7 +576,7 @@ export default function Home() {
                 {/* Gradient Masks for fading edges */}
                 <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
                 <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
-                
+
                 {/* Marquee Track */}
                 <div className="flex w-max animate-marquee gap-3 md:gap-4 items-center hover:[animation-play-state:paused]">
                   {[...Array(4)].flatMap(() => [
@@ -619,14 +611,24 @@ export default function Home() {
                   </motion.article>
                 ))}
               </div>
+
+              <div className="mt-10 flex flex-col items-center justify-center gap-3 text-center">
+                <p className="text-[13px] font-medium text-slate-500">
+                  {language === 'en' ? 'Not all certificates are included here.' : 'Semua sertifikat belum dimasukkan ke sini.'}
+                </p>
+                <a href="https://www.linkedin.com/in/mohfariedalfarizi/details/certifications/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-2.5 text-sm font-semibold text-ink shadow-sm transition hover:-translate-y-0.5 hover:border-[#0077b5] hover:text-[#0077b5] hover:shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  {language === 'en' ? 'View more on LinkedIn' : 'Lihat lebih banyak di LinkedIn'}
+                </a>
+              </div>
             </Section>
 
-            <section className="mx-auto max-w-7xl px-6 pb-16 md:px-10 lg:px-16 lg:pb-24">
+            <section className="mx-auto max-w-7xl px-6 pb-10 md:px-10 lg:px-16 lg:pb-16">
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ duration: 0.55 }} className="rounded-[1.15rem] bg-ink px-4 py-5 text-white shadow-soft md:px-6">
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">Closing note</p>
-                <h2 className="mt-2 text-base font-semibold md:text-xl">Berorientasi solusi dan siap berkontribusi pada produk AI yang berdampak.</h2>
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">{t.sections.closing.note}</p>
+                <h2 className="mt-2 text-base font-semibold md:text-xl italic">{t.sections.closing.title}</h2>
                 <p className="mt-2 max-w-3xl text-[11px] leading-5 text-white/80 md:text-sm md:leading-6">
-                  Struktur baru ini dibuat lebih premium, tidak pasaran, dan lebih visual sehingga value proyekmu terbaca kuat oleh recruiter maupun hiring manager.
+                  {t.sections.closing.desc}
                 </p>
               </motion.div>
             </section>
@@ -642,7 +644,7 @@ export default function Home() {
                     const images = Array.isArray(selectedProject.image) ? selectedProject.image : [selectedProject.image];
                     return (
                       <div className="relative h-52 w-full md:h-64">
-                        <Image src={images[currentImageIndex]} alt={selectedProject.title} width={1600} height={1000} className="h-full w-full object-cover object-center" />
+                        <Image src={images[currentImageIndex]} alt={selectedProject.title} width={1600} height={1000} className="h-full w-full object-contain bg-slate-50 object-center" />
                         {images.length > 1 && (
                           <>
                             <div className="absolute inset-x-0 bottom-3 flex justify-center gap-1.5 z-20">
@@ -689,11 +691,11 @@ export default function Home() {
                   </div>
                   <div className="flex flex-wrap gap-2.5">
                     <a href={selectedProject.repoUrl || '#'} target="_blank" rel="noreferrer" className="rounded-full bg-ink px-4 py-2 text-xs font-semibold text-white transition hover:-translate-y-0.5 md:text-sm">
-                      {selectedProject.repoUrl?.includes('github') ? t.sections.projects.seeGithub : t.sections.projects.seeGithub}
+                      {selectedProject.repoLabel || t.sections.projects.seeGithub}
                     </a>
                     {selectedProject.demoUrl ? (
                       <a href={selectedProject.demoUrl || '#'} target="_blank" rel="noreferrer" className="rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-ink transition hover:-translate-y-0.5 md:text-sm">
-                        {selectedProject.demoUrl.includes('huggingface') ? 'Lihat Hugging Face' : t.sections.projects.seeDemo}
+                        {selectedProject.demoUrl.includes('huggingface') ? (language === 'en' ? 'View Hugging Face' : 'Lihat Hugging Face') : t.sections.projects.seeDemo}
                       </a>
                     ) : null}
                   </div>
@@ -710,7 +712,7 @@ export default function Home() {
                     const images = Array.isArray(selectedExperience.image) ? selectedExperience.image : [selectedExperience.image];
                     return (
                       <div className="relative h-52 w-full md:h-64">
-                        <Image src={images[currentImageIndex]} alt={selectedExperience.title} width={1600} height={1000} className="h-full w-full object-cover object-center" />
+                        <Image src={images[currentImageIndex]} alt={selectedExperience.title} width={1600} height={1000} className="h-full w-full object-contain bg-slate-50 object-center" />
                         {images.length > 1 && (
                           <>
                             <div className="absolute inset-x-0 bottom-3 flex justify-center gap-1.5 z-20">
@@ -730,7 +732,7 @@ export default function Home() {
                     );
                   })()}
                   <button type="button" onClick={() => setSelectedExperience(null)} className="absolute right-4 top-4 rounded-full bg-black/70 px-3 py-1 text-xs font-semibold text-white z-30 transition hover:bg-black">
-                    Tutup
+                    {language === 'en' ? 'Close' : 'Tutup'}
                   </button>
                 </div>
                 <div className="space-y-3 p-4 md:p-5.5">
@@ -748,7 +750,7 @@ export default function Home() {
                     ))}
                   </div>
                   <div className="rounded-[1rem] border border-cyan-100 bg-cyan-50 p-3.5">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Highlights</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{language === 'en' ? 'Highlights' : 'Pencapaian'}</p>
                     <ul className="mt-2.5 space-y-1.5 text-sm text-slate-700">
                       {selectedExperience.highlights?.map((point: string) => (
                         <li key={point}>• {point}</li>
@@ -756,16 +758,16 @@ export default function Home() {
                     </ul>
                   </div>
                   <div className="flex flex-wrap gap-2.5">
-                    {selectedExperience.repoUrl ? (
+                    {selectedExperience.repoUrl && (
                       <a href={selectedExperience.repoUrl} target="_blank" rel="noreferrer" className="rounded-full bg-ink px-4 py-2 text-xs font-semibold text-white transition hover:-translate-y-0.5 md:text-sm">
-                        Lihat GitHub
+                        {t.sections.projects.seeGithub}
                       </a>
-                    ) : null}
-                    {selectedExperience.demoUrl ? (
+                    )}
+                    {selectedExperience.demoUrl && (
                       <a href={selectedExperience.demoUrl} target="_blank" rel="noreferrer" className="rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-ink transition hover:-translate-y-0.5 md:text-sm">
-                        Lihat Detail
+                        {t.sections.projects.seeDetail}
                       </a>
-                    ) : null}
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -791,14 +793,27 @@ export default function Home() {
                   <h3 className="text-xl font-bold leading-snug text-ink md:text-2xl">{selectedCertificate.title}</h3>
 
                   <div className="pt-2">
-                    <a href={selectedCertificate.url} target="_blank" rel="noreferrer" className="inline-flex rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-                      Lihat Sertifikat
+                    <a href={selectedCertificate.url} target="_blank" rel="noreferrer" className="rounded-full bg-ink px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800">
+                      {language === 'en' ? 'View Certificate' : 'Lihat Sertifikat'}
                     </a>
                   </div>
                 </div>
               </motion.div>
             </motion.div>
           ) : null}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {selectedImage && (
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-900/60 p-4 backdrop-blur-sm" onClick={() => setSelectedImage(null)}>
+              <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.2 }} className="relative max-h-[90vh] max-w-5xl rounded-lg overflow-hidden border border-white/10 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+                <button type="button" onClick={() => setSelectedImage(null)} className="absolute right-4 top-4 rounded-full bg-black/70 p-2 text-white z-10 transition hover:bg-black">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+                </button>
+                <Image src={selectedImage} alt="Preview" width={1600} height={1200} className="max-h-[85vh] w-auto object-contain bg-black/50" />
+              </motion.div>
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
     </main>
@@ -817,7 +832,7 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="mx-auto max-w-7xl px-6 py-16 md:px-10 lg:px-16 lg:py-24">
+    <section id={id} className="mx-auto max-w-7xl px-6 py-10 md:px-10 lg:px-16 lg:py-16">
       <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.25 }} transition={{ duration: 0.55 }}>
         <h2 className="mt-5 text-2xl font-semibold tracking-tight text-ink md:text-4xl">{title}</h2>
         <p className="mt-5 max-w-3xl text-sm leading-7 text-muted md:text-base">{copy}</p>
