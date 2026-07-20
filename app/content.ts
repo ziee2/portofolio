@@ -28,6 +28,7 @@ import dataAnotasiDaunImage from '../assets/project/data_anotasi_daun.png';
 import chicheckMainImage from '../assets/project/chicheck_main.png';
 import chicheckSubImage from '../assets/project/chicheck_sub.png';
 import tomkitsImage from '../assets/project/tomkits.png';
+import comvisiotImage from '../assets/project/comvisiot.png';
 import chckcvImage from '../assets/project/chckcv.png';
 
 export type ProjectTrack = 'Semua' | 'All' | 'AI Engineer' | 'Data' | 'Software Development' | 'Game Development';
@@ -332,7 +333,7 @@ export const dict = {
           {
             title: 'Computer Vision & IoT (Snack & Mouse Detection)',
             summary: 'Personal project mendeteksi objek menggunakan YOLO dan mengintegrasikannya dengan Arduino Uno.',
-            image: chickenScanImage,
+            image: comvisiotImage,
             category: 'Computer Vision · IoT',
             period: 'Feb 2026',
             tracks: ['AI Engineer'] as ProjectTrack[],
@@ -662,7 +663,7 @@ export const dict = {
           {
             title: 'Computer Vision & IoT (Snack & Mouse Detection)',
             summary: 'Personal project detecting objects using YOLO and integrating with Arduino Uno.',
-            image: chickenScanImage,
+            image: comvisiotImage,
             category: 'Computer Vision · IoT',
             period: 'Feb 2026',
             tracks: ['AI Engineer'] as ProjectTrack[],
