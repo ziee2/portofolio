@@ -453,7 +453,7 @@ export default function Home() {
                         <div className="relative overflow-hidden">
                           <Image src={Array.isArray(leadProject.image) ? leadProject.image[0] : leadProject.image} alt={leadProject.title} width={1600} height={1000} className="h-44 w-full object-contain bg-slate-50 object-center transition duration-500 group-hover:scale-105 md:h-56" />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/15 to-transparent" />
-                          <div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[10px] font-semibold text-ink">{leadProject.period}</div>
+                          <div className="absolute left-4 top-4 rounded-full bg-slate-900/80 px-3 py-1 text-[10px] font-semibold text-white backdrop-blur-md shadow-sm border border-white/10">{leadProject.period}</div>
                           <div className="absolute right-4 top-4 rounded-full bg-black/75 px-3 py-1 text-[10px] font-semibold text-white">{leadProject.tracks[0]}</div>
                         </div>
                         <div className="p-4 md:p-5">
@@ -490,7 +490,7 @@ export default function Home() {
                           <motion.article key={project.title} whileHover={{ y: -3 }} className="group overflow-hidden rounded-[1.2rem] border border-slate-200 bg-white shadow-sm transition">
                             <div className="relative overflow-hidden">
                               <Image src={Array.isArray(project.image) ? project.image[0] : project.image} alt={project.title} width={1200} height={800} className="h-28 w-full object-contain bg-slate-50 object-center transition duration-500 group-hover:scale-105" />
-                              <div className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-0.5 text-[10px] font-semibold text-ink">{project.period}</div>
+                              <div className="absolute left-3 top-3 rounded-full bg-slate-900/80 px-2.5 py-0.5 text-[10px] font-semibold text-white backdrop-blur-md shadow-sm border border-white/10">{project.period}</div>
                             </div>
                             <div className="p-3.5">
                               <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent">{project.category}</p>
@@ -538,8 +538,11 @@ export default function Home() {
                   {showMoreProjects && extraProjects.length > 0 ? (
                     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                       {extraProjects.map((project, index) => (
-                        <motion.article key={project.title} layout initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col h-full overflow-hidden rounded-[1.15rem] border border-slate-200 bg-white shadow-sm">
-                          <Image src={Array.isArray(project.image) ? project.image[0] : project.image} alt={project.title} width={1200} height={800} className="w-full object-contain bg-slate-50 h-36" />
+                        <motion.article key={project.title} layout initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="group flex flex-col h-full overflow-hidden rounded-[1.15rem] border border-slate-200 bg-white shadow-sm">
+                          <div className="relative overflow-hidden">
+                            <Image src={Array.isArray(project.image) ? project.image[0] : project.image} alt={project.title} width={1200} height={800} className="w-full object-contain bg-slate-50 h-36 transition duration-500 group-hover:scale-105" />
+                            <div className="absolute left-3 top-3 rounded-full bg-slate-900/80 px-2.5 py-0.5 text-[10px] font-semibold text-white backdrop-blur-md shadow-sm border border-white/10">{project.period}</div>
+                          </div>
                           <div className="p-3.5 flex flex-col flex-1">
                             <div className="flex items-start justify-between gap-2">
                               <h4 className="text-xs font-semibold text-ink md:text-sm line-clamp-2">{project.title}</h4>
