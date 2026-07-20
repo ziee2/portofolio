@@ -261,8 +261,7 @@ export const dict = {
             outcome: 'Mengubah sinyal multimodal menjadi umpan balik yang dapat ditindaklanjuti untuk performa berbicara.',
             summary: 'Sistem AI multi-modal menggunakan MediaPipe, YOLO, BERT, Wav2Vec2, dan Silero VAD untuk menganalisis postur, artikulasi, kata pengisi, tempo, dan relevansi topik.',
             stack: ['MediaPipe', 'YOLO', 'BERT'],
-            repoUrl: 'https://huggingface.co/Cyberlace',
-            repoLabel: 'HF',
+            repoUrl: 'https://github.com/ziee2/AI-Public-Speaking_-SWARA',
             highlights: ['Analisis pose dan gesture real-time', 'Evaluasi suara dan tempo bicara', 'Rekomendasi yang langsung bisa ditindaklanjuti'],
           },
           {
@@ -275,7 +274,7 @@ export const dict = {
             outcome: 'Chicken Manure Scan Application: Aplikasi website untuk scanning penyakit ayam melalui feses, serta pendataan manajemen seperti pakan dan riwayat penyakit.',
             summary: 'Chicken Manure Scan Application: Aplikasi pendeteksi penyakit melalui pemindaian feses menggunakan model CNN (EfficientNetB3), dilengkapi fitur manajemen pencatatan pakan dan riwayat penyakit secara terpadu.',
             stack: ['EfficientNetB3', 'Flask', 'Laravel', 'React'],
-            repoUrl: 'https://github.com/ziee2',
+            repoUrl: 'https://github.com/ziee2/ChiCheck-WEB',
             highlights: ['Model klasifikasi penyakit berdasarkan gambar feses', 'Sistem pendataan riwayat dan manajemen pakan', 'Integrasi API antara model machine learning dan website'],
           },
           {
@@ -353,6 +352,7 @@ export const dict = {
             featured: false,
             outcome: 'Melakukan klasifikasi sentimen menggunakan pendekatan GRU, LSTM, dan CNN.',
             stack: ['GRU', 'LSTM', 'CNN', 'Web Scraping'],
+            repoUrl: 'https://github.com/ziee2/Dicoding---BFDL---Sentimen-Analysis',
             highlights: ['Web scraping ulasan aplikasi Shopee di Play Store', 'Pemrosesan bahasa alami (NLP) untuk teks bahasa Indonesia', 'Evaluasi performa klasifikasi GRU, LSTM, dan CNN'],
           },
           {
@@ -365,6 +365,7 @@ export const dict = {
             featured: false,
             outcome: 'Memberikan rekomendasi anime terpersonalisasi berdasarkan kemiripan pola kesukaan pengguna.',
             stack: ['Collaborative Filtering', 'Python', 'Pandas'],
+            repoUrl: 'https://github.com/ziee2/Dicoding_MLT_Submission2',
             highlights: ['Implementasi user-based collaborative filtering', 'Implementasi item-based collaborative filtering', 'Analisis matriks kemiripan untuk rekomendasi'],
           },
           {
@@ -377,6 +378,7 @@ export const dict = {
             featured: false,
             outcome: 'Menyediakan profil digital yang interaktif dan responsif untuk keperluan bisnis perusahaan.',
             stack: ['HTML', 'CSS'],
+            repoUrl: 'https://github.com/ziee2/EHPRA-Farm',
             demoUrl: 'http://cvehprafarm.com/',
             demoLabel: 'Kunjungi Website',
             highlights: ['Desain antarmuka responsif', 'Pengembangan murni menggunakan HTML dan CSS', 'Struktur website yang SEO-friendly'],
@@ -591,8 +593,7 @@ export const dict = {
             outcome: 'Turned multimodal signals into actionable feedback for speaking performance.',
             summary: 'Multi-modal AI system using MediaPipe, YOLO, BERT, Wav2Vec2, and Silero VAD to analyze posture, articulation, filler words, tempo, and topic relevance.',
             stack: ['MediaPipe', 'YOLO', 'BERT'],
-            repoUrl: 'https://huggingface.co/Cyberlace',
-            repoLabel: 'HF',
+            repoUrl: 'https://github.com/ziee2/AI-Public-Speaking_-SWARA',
             highlights: ['Real-time pose and gesture analysis', 'Voice and speaking tempo evaluation', 'Actionable recommendations'],
           },
           {
@@ -605,7 +606,7 @@ export const dict = {
             outcome: 'Chicken Manure Scan Application: A website application for scanning chicken diseases via manure, and management logging such as feed and disease history.',
             summary: 'Chicken Manure Scan Application: A disease detection app via manure scanning using a CNN model (EfficientNetB3), complete with integrated management features for feed tracking and disease history.',
             stack: ['EfficientNetB3', 'Flask', 'Laravel', 'React'],
-            repoUrl: 'https://github.com/ziee2',
+            repoUrl: 'https://github.com/ziee2/ChiCheck-WEB',
             highlights: ['Disease classification model based on manure images', 'History logging and feed management system', 'API integration between machine learning model and website'],
           },
           {
@@ -683,6 +684,7 @@ export const dict = {
             featured: false,
             outcome: 'Performed sentiment classification using GRU, LSTM, and CNN approaches.',
             stack: ['GRU', 'LSTM', 'CNN', 'Web Scraping'],
+            repoUrl: 'https://github.com/ziee2/Dicoding---BFDL---Sentimen-Analysis',
             highlights: ['Web scraped Shopee app reviews from Play Store', 'Natural Language Processing (NLP) for Indonesian text', 'Evaluated GRU, LSTM, and CNN classification performance'],
           },
           {
@@ -695,6 +697,7 @@ export const dict = {
             featured: false,
             outcome: 'Provided personalized anime recommendations based on user preference patterns.',
             stack: ['Collaborative Filtering', 'Python', 'Pandas'],
+            repoUrl: 'https://github.com/ziee2/Dicoding_MLT_Submission2',
             highlights: ['Implemented user-based collaborative filtering', 'Implemented item-based collaborative filtering', 'Analyzed similarity matrices for recommendations'],
           },
           {
@@ -707,6 +710,7 @@ export const dict = {
             featured: false,
             outcome: 'Provided an interactive and responsive digital profile for the company’s business needs.',
             stack: ['HTML', 'CSS'],
+            repoUrl: 'https://github.com/ziee2/EHPRA-Farm',
             demoUrl: 'http://cvehprafarm.com/',
             demoLabel: 'Visit Website',
             highlights: ['Responsive interface design', 'Pure development using HTML and CSS', 'SEO-friendly website structure'],
