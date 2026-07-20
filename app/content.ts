@@ -27,6 +27,7 @@ import chatbotkskImage from '../assets/project/chatbotksk.png';
 import dataAnotasiDaunImage from '../assets/project/data_anotasi_daun.png';
 import chicheckMainImage from '../assets/project/chicheck_main.png';
 import chicheckSubImage from '../assets/project/chicheck_sub.png';
+import tomkitsImage from '../assets/project/tomkits.png';
 import chckcvImage from '../assets/project/chckcv.png';
 
 export type ProjectTrack = 'Semua' | 'All' | 'AI Engineer' | 'Data' | 'Software Development' | 'Game Development';
@@ -45,6 +46,7 @@ export type ProjectItem = {
   repoLabel?: string;
   demoUrl?: string;
   demoLabel?: string;
+  videoUrl?: string;
   highlights: string[];
 };
 
@@ -337,6 +339,7 @@ export const dict = {
             featured: false,
             outcome: 'Mengotomatisasi respon perangkat keras (lampu berkedip lambat/cepat) berdasarkan deteksi objek dari kamera.',
             stack: ['YOLO', 'Arduino Uno', 'Python'],
+            videoUrl: 'https://www.youtube.com/embed/vOM4ZAMoyPs',
             highlights: ['Deteksi objek real-time dengan YOLO', 'Integrasi hardware menggunakan serial Arduino', 'Sistem respon otomatis berbasis plug in/plug off'],
           },
           {
@@ -376,6 +379,20 @@ export const dict = {
             demoUrl: 'http://cvehprafarm.com/',
             demoLabel: 'Kunjungi Website',
             highlights: ['Desain antarmuka responsif', 'Pengembangan murni menggunakan HTML dan CSS', 'Struktur website yang SEO-friendly'],
+          },
+          {
+            title: 'TomKits',
+            summary: 'Aplikasi Computer Vision berbasis Machine Learning untuk mendeteksi penyakit tomat melalui daun serta mengevaluasi kualitas dan kematangannya. Dilengkapi dengan solusi penyakit dan rekomendasi perawatan.',
+            image: tomkitsImage,
+            category: 'Computer Vision',
+            period: 'Nov - Des 2024',
+            tracks: ['AI Engineer'] as ProjectTrack[],
+            featured: false,
+            outcome: 'Terkait dengan Bangkit Academy (Google, GoTo, Traveloka). Membantu petani mendeteksi penyakit tomat dan mengecek kematangan.',
+            stack: ['Machine Learning', 'Computer Vision', 'Bangkit Academy'],
+            repoUrl: 'https://github.com/TomKits',
+            repoLabel: 'GitHub',
+            highlights: ['Deteksi penyakit tomat dari daun', 'Evaluasi kualitas dan kematangan tomat', 'Proyek terkait Bangkit Academy'],
           }
         ]
       },
@@ -652,6 +669,7 @@ export const dict = {
             featured: false,
             outcome: 'Automated hardware responses (slow/fast blinking LED) based on camera object detection.',
             stack: ['YOLO', 'Arduino Uno', 'Python'],
+            videoUrl: 'https://www.youtube.com/embed/vOM4ZAMoyPs',
             highlights: ['Real-time object detection with YOLO', 'Hardware integration via Arduino serial', 'Automated response system based on plug in/plug off logic'],
           },
           {
@@ -691,6 +709,20 @@ export const dict = {
             demoUrl: 'http://cvehprafarm.com/',
             demoLabel: 'Visit Website',
             highlights: ['Responsive interface design', 'Pure development using HTML and CSS', 'SEO-friendly website structure'],
+          },
+          {
+            title: 'TomKits',
+            summary: 'A Machine Learning-based Computer Vision application to detect tomato diseases via leaves and evaluate tomato quality and ripeness. Includes disease solutions and practical plant care recommendations.',
+            image: tomkitsImage,
+            category: 'Computer Vision',
+            period: 'Nov - Dec 2024',
+            tracks: ['AI Engineer'] as ProjectTrack[],
+            featured: false,
+            outcome: 'Associated with Bangkit Academy (Google, GoTo, Traveloka). Helps farmers detect tomato diseases and evaluate ripeness.',
+            stack: ['Machine Learning', 'Computer Vision', 'Bangkit Academy'],
+            repoUrl: 'https://github.com/TomKits',
+            repoLabel: 'GitHub',
+            highlights: ['Tomato disease detection from leaves', 'Evaluation of tomato quality and ripeness', 'Associated with Bangkit Academy'],
           }
         ]
       },

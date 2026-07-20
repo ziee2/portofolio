@@ -663,7 +663,17 @@ export default function Home() {
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4 backdrop-blur-sm" onClick={() => setSelectedProject(null)}>
               <motion.div initial={{ opacity: 0, y: 20, scale: 0.98 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 12, scale: 0.98 }} transition={{ duration: 0.24 }} className="w-full max-w-3xl max-h-[90vh] overflow-y-auto overflow-x-hidden rounded-[1.4rem] border border-slate-200 bg-white shadow-[0_28px_90px_rgba(15,23,42,0.35)]" onClick={(event) => event.stopPropagation()}>
                 <div className="relative group">
-                  {(() => {
+                  {selectedProject.videoUrl ? (
+                    <div className="relative w-full aspect-video bg-black rounded-t-[1.4rem] overflow-hidden">
+                      <iframe
+                        src={selectedProject.videoUrl}
+                        title={selectedProject.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="absolute inset-0 h-full w-full border-0"
+                      />
+                    </div>
+                  ) : (() => {
                     const images = Array.isArray(selectedProject.image) ? selectedProject.image : [selectedProject.image];
                     return (
                       <div className="relative h-52 w-full md:h-64">
