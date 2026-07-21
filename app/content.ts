@@ -405,8 +405,8 @@ export const dict = {
         title: 'Keahlian',
         copy: 'Keterampilan teknis dan perangkat utama yang saya kuasai untuk mengolah data, melatih model AI, hingga mendeploy aplikasi.',
         groups: [
-          { title: 'AI / ML', items: ['Python', 'TensorFlow', 'PyTorch', 'Keras', 'Hugging Face', 'Flask', 'FastAPI'] },
-          { title: 'Data', items: ['SQL', 'MySQL', 'PostgreSQL', 'ETL', 'Apache NiFi', 'Airflow', 'Web Scraping'] },
+          { title: 'AI / ML', items: ['Python', 'TensorFlow', 'PyTorch', 'Keras', 'Hugging Face', 'LLM', 'RAG', 'Flask', 'FastAPI'] },
+          { title: 'Data', items: ['SQL', 'MySQL', 'PostgreSQL', 'ETL', 'Apache NiFi', 'Airflow', 'Web Scraping', 'Kaggle', 'Roboflow'] },
           { title: 'Web / Deployment', items: ['PHP', 'JavaScript', 'Laravel', 'Docker', 'REST API', 'Git', 'Agile collaboration'] },
         ]
       },
@@ -739,8 +739,8 @@ export const dict = {
         title: 'Skills',
         copy: 'The core technical skills and toolsets I leverage to process data, train AI models, and deploy applications.',
         groups: [
-          { title: 'AI / ML', items: ['Python', 'TensorFlow', 'PyTorch', 'Keras', 'Hugging Face', 'Flask', 'FastAPI', 'LLM', 'RAG'] },
-          { title: 'Data', items: ['MySQL', 'PostgreSQL', 'ETL', 'Apache NiFi', 'Web Scraping', 'Kaggle', 'Roboflow'] },
+          { title: 'AI / ML', items: ['Python', 'TensorFlow', 'PyTorch', 'Keras', 'Hugging Face', 'LLM', 'RAG', 'Flask', 'FastAPI'] },
+          { title: 'Data', items: ['SQL', 'MySQL', 'PostgreSQL', 'ETL', 'Apache NiFi', 'Airflow', 'Web Scraping', 'Kaggle', 'Roboflow'] },
           { title: 'Web / Deployment', items: ['PHP', 'JavaScript', 'Laravel', 'Docker', 'REST API', 'Git', 'Agile collaboration'] },
         ]
       },
