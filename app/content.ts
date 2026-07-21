@@ -233,8 +233,7 @@ export const dict = {
             outcome: 'Menambahkan dukungan pencarian semantik dan rekomendasi obat untuk alur kerja apotek.',
             summary: 'Chatbot RAG (retrieval-augmented generation) hybrid dengan LangChain, FAISS, LLM lokal via Ollama, pencarian semantik Sentence-BERT, dan integrasi FastAPI untuk rekomendasi pengobatan.',
             stack: ['LangChain', 'FAISS', 'Ollama'],
-            repoUrl: 'https://huggingface.co/models',
-            repoLabel: 'Hugging Face',
+            demoUrl: 'https://huggingface.co/spaces/fariedalfarizi/kasirsehatku-chatbot',
             highlights: ['RAG pipeline untuk data obat', 'Pencarian semantik dengan Sentence-BERT', 'Integrasi FastAPI ke alur POS'],
           },
           {
@@ -567,8 +566,7 @@ export const dict = {
             outcome: 'Added semantic retrieval and medication recommendation support for a pharmacy workflow.',
             summary: 'Hybrid retrieval-augmented generation chatbot with LangChain, FAISS, local LLM via Ollama, Sentence-BERT semantic search, and FastAPI integration for medication recommendations.',
             stack: ['LangChain', 'FAISS', 'Ollama'],
-            repoUrl: 'https://huggingface.co/models',
-            repoLabel: 'Hugging Face',
+            demoUrl: 'https://huggingface.co/spaces/fariedalfarizi/kasirsehatku-chatbot',
             highlights: ['RAG pipeline for medication data', 'Semantic search with Sentence-BERT', 'FastAPI integration into POS flow'],
           },
           {
