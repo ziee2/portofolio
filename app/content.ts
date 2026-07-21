@@ -204,7 +204,7 @@ export const dict = {
               'Mendeploy model ke dalam REST API menggunakan Flask.',
               'Mendapatkan sertifikasi TensorFlow Developer Professional.'
             ],
-            repoUrl: 'https://github.com/ziee2'
+            repoUrl: 'https://github.com/TomKits'
           }
         ]
       },
@@ -262,6 +262,8 @@ export const dict = {
             summary: 'Sistem AI multi-modal menggunakan MediaPipe, YOLO, BERT, Wav2Vec2, dan Silero VAD untuk menganalisis postur, artikulasi, kata pengisi, tempo, dan relevansi topik.',
             stack: ['MediaPipe', 'YOLO', 'BERT'],
             repoUrl: 'https://github.com/ziee2/AI-Public-Speaking_-SWARA',
+            demoUrl: 'https://huggingface.co/Cyberlace',
+            demoLabel: 'Hugging Face',
             highlights: ['Analisis pose dan gesture real-time', 'Evaluasi suara dan tempo bicara', 'Rekomendasi yang langsung bisa ditindaklanjuti'],
           },
           {
@@ -534,9 +536,9 @@ export const dict = {
               'Graduated with Distinction (Top Graduate) from the Bangkit Academy program.',
               'Trained an EfficientNet model for tomato disease detection with 98% accuracy.',
               'Deployed the model into a REST API using Flask.',
-              'Earned the TensorFlow Developer Professional certification.'
+              'Earned TensorFlow Developer Professional certification.'
             ],
-            repoUrl: 'https://github.com/ziee2'
+            repoUrl: 'https://github.com/TomKits'
           }
         ]
       },
@@ -594,6 +596,8 @@ export const dict = {
             summary: 'Multi-modal AI system using MediaPipe, YOLO, BERT, Wav2Vec2, and Silero VAD to analyze posture, articulation, filler words, tempo, and topic relevance.',
             stack: ['MediaPipe', 'YOLO', 'BERT'],
             repoUrl: 'https://github.com/ziee2/AI-Public-Speaking_-SWARA',
+            demoUrl: 'https://huggingface.co/Cyberlace',
+            demoLabel: 'Hugging Face',
             highlights: ['Real-time pose and gesture analysis', 'Voice and speaking tempo evaluation', 'Actionable recommendations'],
           },
           {
